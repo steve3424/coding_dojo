@@ -1,0 +1,37 @@
+button {
+	display: block;
+	margin: 1em 0em;
+}
+
+button:nth-child(1) {
+	background-color: aqua;
+	/* border-radius: 16em; */
+	border-radius: 100px;
+	color: green;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	padding: 0.3em 2.75em;
+}
+
+button:nth-child(2) {
+	background-color: lightgreen;
+	border: 0;
+	border-radius: 50%;
+	color: white;
+	font-size: 1.5em;
+	height: 30px;
+	padding: 0 0;
+	width: 30px;
+}
+
+button:nth-child(3) {
+	background-color:cornflowerblue;
+	border: 1px 1px;
+	border-color: black;
+	box-shadow: 2px 2px black;
+	color: white;
+	padding: 0.4em 1.5em;
+}
+
+#hover_animate:hover {
+	box-shadow: 2px 2px gray;
+}
