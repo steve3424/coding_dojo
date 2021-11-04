@@ -1,0 +1,330 @@
+/* Base styles */
+html {
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+
+*, *::before, *::after {
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+
+* {
+	font-family: 'Roboto', sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	transform: translate(1px, 1px);
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 400;
+}
+
+ /* Set up 2 column layout in both header
+   and main section */
+.header-wrapper,
+.content-wrapper {
+	display: flex;
+	justify-content: center;
+}
+
+.header,
+.content {
+	display: flex;
+	width: 850px;
+}
+
+.content {
+	margin-top: 30px;
+}
+
+.header__col-left,
+.content__col-left {
+	flex: 2;
+	margin-right: 30px;
+}
+
+.header__col-right,
+.content__col-right {
+	flex: 1;
+}
+
+/* HEADER */
+.header-wrapper {
+	background-color: black;
+}
+
+.header {
+	padding: 10px 5px;
+}
+
+.header__col-right {
+	align-items: center;
+	display: flex;
+	justify-content: right;
+}
+
+.header__col-left {
+	align-items: center;
+	display: flex;
+}
+
+.header__title {
+	color: white;
+	margin-right: 25px;
+	font-size: 2.5em;
+}
+
+.header__nav {
+	display: flex;
+	list-style: none;
+}
+
+.header__item {
+	margin: 0px 15px;
+}
+
+.header__link {
+	color: gray;
+	font-size: 1.2em;
+}
+
+.header__link:hover {
+	color: white;
+}
+
+/* SIGN OUT BUTTON */
+.sign-out-btn {
+	background-color: gray;
+	border-radius: 10px;
+	color: white;
+	cursor: pointer;
+	font-size: 1.2em;
+	padding: 2px 10px;
+}
+
+.sign-out-btn:hover {
+	transform: translate(1px, 1px);
+}
+
+/* EDUCATION CARD */
+.education-card {
+	background-color: whitesmoke;
+	margin-bottom: 30px;
+	padding-bottom: 15px;
+	max-width: 400px;
+}
+
+.education-card__header,
+.education-card__body {
+	padding: 5px 25px;
+}
+
+.education-card__header {
+	align-items: center;
+	background-color: black;
+	display: flex;
+	height: 65px;
+}
+
+/* NOTE: The border radius value should
+      probably be coordinated between
+	  these 2 classes/elements, so I 
+	  pulled this out to be styled together */
+.education-card,
+.education-card__header {
+	border-radius: 10px;
+}
+
+.education-card__title {
+	color: white;
+	font-size: 1.4em;
+}
+
+.education-card__name {
+	font-size: 1.3em;
+	font-weight: bold;
+	padding-top: 10px;
+}
+
+.education-card__date {
+	font-size: .9em;
+	padding: 10px 0px;
+	opacity: 60%;
+}
+
+/* USER CARD */
+.user-card {
+	background-color: whitesmoke;
+	margin-bottom: 30px;
+	padding-bottom: 15px;
+	max-width: 400px;
+}
+
+.user-card__header {
+	background-color: skyblue;
+	height: 65px;
+}
+
+/* NOTE: The border radius value should
+      probably be coordinated between
+	  these 2 classes/elements, so I 
+	  pulled this out to be styled together */
+.user-card,
+.user-card__header {
+	border-radius: 10px;
+}
+
+.user-card__body {
+	padding-top: 30px;
+	padding-left: 25px;
+}
+
+.user-card__profile-pic {
+	position: relative;
+	top: 30px;
+	left: 25px;
+	width: 65px;
+}
+
+.user-card__location-wrapper {
+	align-items: center;
+	display: flex;
+	margin: 7px 0px;
+}
+
+.user-card__map-marker {
+	margin-right: 10px;
+	width: 10px;
+}
+
+.user-card__description {
+	margin: 8px 0;
+}
+
+.user-card__edit-profile-icon {
+	align-self: center;
+	margin-right: 10px;
+	width: 15px;
+}
+
+.user-card__edit-profile-wrapper {
+	align-items: center;
+	display: flex;
+}
+
+/* CONNECTION CARD */
+.connection-card {
+	display: flex;
+	background-color: whitesmoke;
+	flex-direction: column;
+	justify-content: space-between;
+	margin-bottom: 30px;
+	width: 100%;
+}
+
+.connection-card__header {
+	align-items: center;
+	background-color: black;
+	display: flex;
+	justify-content: space-evenly;
+	height: 65px;
+}
+
+.connection-card__number,
+.connection-card__title {
+	font-size: 1.4em;
+	padding: 3px;
+	text-align: center;
+}
+
+.connection-card__number {
+	background-color: gray;
+	border-radius: 50%;
+	min-width: 35px;
+}
+
+.connection-card__title {
+	color: white;
+}
+
+.connection-card__list {
+	/* border: 2px solid gray; */
+	padding: 10px;
+}
+
+.connection-card__list > .person {
+	margin-bottom: 10px;
+} 
+
+.connection-card__list > .person:last-child {
+	margin-bottom: 0px;
+} 
+
+.connection-card__footer {
+	align-items: center;
+	/* border-right: 2px solid gray;
+	border-bottom: 2px solid gray;
+	border-left: 2px solid gray; */
+	display: flex;
+	height: 50px;
+	padding: 0px 15px;
+}
+
+.connection-card__more-link {
+	text-decoration: underline;
+}
+
+/* NOTE: The border radius value should
+      probably be coordinated between
+	  these 2 classes/elements, so I 
+	  pulled this out to be styled together */
+.connection-card,
+.connection-card__header,
+.connection-card__list,
+.connection-card__footer {
+	border-radius: 10px;
+}
+
+#no-connections-msg {
+	display: none;
+	padding: 3px 5px;
+	text-align: center;
+}
+
+/* PERSON */
+.person {
+	align-items: center;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: space-between;
+	max-height: 50px;
+	max-width: 350px;
+}
+
+.person__pic {
+	margin-right: 15px;
+	width: 50px;
+}
+
+.person__name {
+	flex: 1;
+}
+
+.person__accept,
+.person__reject {
+	cursor: pointer;
+	width: 35px;
+}
+
+.person__accept:hover,
+.person__reject:hover {
+	transform: translate(1px, 1px);
+}
