@@ -1,0 +1,63 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+/* Centers card on screen */
+.wrapper {
+	background-color: blue;
+	display: flex;
+	justify-content: center;
+	padding: 25px;
+	width: auto;
+}
+
+/* Main card div */
+.user-card {
+	background-color: whitesmoke;
+	height: 240px;
+	width: 100%;
+}
+
+.user-card__header {
+	background-color: skyblue;
+	height: 65px;
+}
+
+.user-card__body {
+	padding-top: 30px;
+	padding-left: 25px;
+}
+
+.user-card__profile-pic {
+	position: relative;
+	top: 30px;
+	left: 25px;
+	width: 65px;
+}
+
+.user-card__location-wrapper {
+	align-items: center;
+	display: flex;
+	margin: 7px 0px;
+}
+
+.user-card__map-marker {
+	margin-right: 10px;
+	width: 10px;
+}
+
+.user-card__description {
+	margin: 8px 0;
+}
+
+.user-card__edit-profile-icon {
+	align-self: center;
+	margin-right: 10px;
+	width: 15px;
+}
+
+.user-card__edit-profile-wrapper {
+	align-items: center;
+	display: flex;
+}
