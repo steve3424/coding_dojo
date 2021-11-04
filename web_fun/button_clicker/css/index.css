@@ -24,7 +24,7 @@ a:hover {
 }
 
 input[type=button] {
-	box-shadow: 2px 2px;
+	box-shadow: 2px 2px black;
 }
 
 input[type=button]:hover {
@@ -48,14 +48,13 @@ input[type=button]:hover {
 /* HEADER STYLES */
 .header {
 	align-items: center;
-	background-color: green;
+	background-color: gray;
 	display: flex;
 	justify-content: space-between;
 	padding: 15px 25px;
 }
 
 .header__title {
-	border: 2px solid black;
 	flex: 1;
 	max-width: 150px;
 }
@@ -67,9 +66,12 @@ input[type=button]:hover {
 }
 
 .header__login-btn {
+	background-color: royalblue;
+	color: white;
+	font-weight: bold;
 	flex: 1;
 	max-width: 80px;
-	padding: 0px 10px;
+	padding: 3px 5px;
 }
 
 /* MAIN CONTENT STYLES */
@@ -79,8 +81,6 @@ input[type=button]:hover {
 }
 
 .content__col-left {
-	background-color: orange;
-	border: 1px solid black;
 	flex: 2;
 	margin-right: 30px;
 }
@@ -90,15 +90,15 @@ input[type=button]:hover {
 }
 
 .content__col-right {
-	background-color: green;
-	border: 1px solid black;
 	flex: 1;
 }
 
 /* ADD DEFINITION CARD */
 .add-definition-card {
 	align-items: center;
-	background-color: blue;
+	background-color: whitesmoke;
+	border: 3px solid gray;
+	border-radius: 10px;
 	display: flex;
 	flex-direction: column;
 	height: 200px;
@@ -111,6 +111,8 @@ input[type=button]:hover {
 }
 
 .add-definition-card__btn {
+	background-color: seagreen;
+	font-size: larger;
 	height: 30px;
 	margin-bottom: 50px;
 	width: 230px;
@@ -118,8 +120,10 @@ input[type=button]:hover {
 
 /* DICTIONARY ENTRY CARD */
 .dictionary-entry {
-	background-color: red;
 	align-items: center;
+	background-color: whitesmoke;
+	border: 3px solid gray;
+	border-radius: 10px;
 	display: flex;
 	height: 230px;
 }
@@ -129,7 +133,6 @@ input[type=button]:hover {
 	display: flex;
 	flex-direction: column;
 
-	border: 4px solid black;
 	flex: 1;
 	height: 100%;
 	padding: 10px 0px;
@@ -145,7 +148,6 @@ input[type=button]:hover {
 }
 
 .dictionary-entry__definition {
-	border: 2px solid black;
 	flex: 2;
 	font-size: x-large;
 	margin-left: 30px;
@@ -153,6 +155,8 @@ input[type=button]:hover {
 }
 
 .dictionary-entry__like-btn {
+	background-color: #ffcc00;
+	font-size: medium;
 	margin-top: 30px;
 	padding: 10px 35px;
 }
