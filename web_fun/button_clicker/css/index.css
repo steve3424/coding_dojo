@@ -1,0 +1,158 @@
+/* BASE STYLES */
+html {
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+
+*, *::before, *::after {
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+
+* {
+	font-family: 'Roboto', sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 400;
+}
+
+a:hover {
+	color: skyblue;
+}
+
+input[type=button] {
+	box-shadow: 2px 2px;
+}
+
+input[type=button]:hover {
+	box-shadow: 0px 0px;
+	cursor: pointer;
+	transform: translate(2px, 2px);
+}
+
+.emphasis {
+	font-weight: bold;
+}
+
+.wrapper {
+	margin: 0px auto;
+	max-width: 950px;
+	min-width: 500px;
+	width: 75%;
+}
+
+
+/* HEADER STYLES */
+.header {
+	align-items: center;
+	background-color: green;
+	display: flex;
+	justify-content: space-between;
+	padding: 15px 25px;
+}
+
+.header__title {
+	border: 2px solid black;
+	flex: 1;
+	max-width: 150px;
+}
+
+.header__search {
+	flex: 2;
+	max-width: 500px;
+	padding: 4px;
+}
+
+.header__login-btn {
+	flex: 1;
+	max-width: 80px;
+	padding: 0px 10px;
+}
+
+/* MAIN CONTENT STYLES */
+.content {
+	display: flex;
+	margin-top: 30px;
+}
+
+.content__col-left {
+	background-color: orange;
+	border: 1px solid black;
+	flex: 2;
+	margin-right: 30px;
+}
+
+.content__col-left > *:not(:last-child) {
+	margin-bottom: 30px;
+}
+
+.content__col-right {
+	background-color: green;
+	border: 1px solid black;
+	flex: 1;
+}
+
+/* ADD DEFINITION CARD */
+.add-definition-card {
+	align-items: center;
+	background-color: blue;
+	display: flex;
+	flex-direction: column;
+	height: 200px;
+	justify-content: space-between;
+	padding: 10px;
+}
+
+.add-definition-card__title {
+	font-weight: normal;
+}
+
+.add-definition-card__btn {
+	height: 30px;
+	margin-bottom: 50px;
+	width: 230px;
+}
+
+/* DICTIONARY ENTRY CARD */
+.dictionary-entry {
+	background-color: red;
+	align-items: center;
+	display: flex;
+	height: 230px;
+}
+
+.dictionary-entry__word-wrapper {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+
+	border: 4px solid black;
+	flex: 1;
+	height: 100%;
+	padding: 10px 0px;
+}
+
+.dictionary-entry__word-wrapper > p {
+	font-size: large;
+	margin: 5px 0px;
+}
+
+.dictionary-entry__type {
+	font-style: italic;
+}
+
+.dictionary-entry__definition {
+	border: 2px solid black;
+	flex: 2;
+	font-size: x-large;
+	margin-left: 30px;
+	padding: 5px;
+}
+
+.dictionary-entry__like-btn {
+	margin-top: 30px;
+	padding: 10px 35px;
+}
