@@ -1,9 +1,4 @@
 /* BASE STYLES */
-html {
-	box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-}
-
 *, *::before, *::after {
 	box-sizing: border-box;
 	-webkit-box-sizing: border-box;
