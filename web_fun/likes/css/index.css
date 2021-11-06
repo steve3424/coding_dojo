@@ -1,0 +1,121 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+.wrapper {
+	margin: 0px auto;
+	min-width: 300px;
+	max-width: 900px;
+	width: 50%;
+}
+
+
+/* HEADER */
+.header {
+	align-items: center;
+	background-color: black;
+	display: flex;
+	height: 75px;
+	padding: 0px 30px;
+}
+
+.header__title {
+	color: white;
+}
+
+
+/* MAIN CONTENT */
+.main-content {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.main-content__title {
+	flex-basis: 100%;
+	margin: 10px 0px;
+	text-align: center;
+}
+
+.main-content__col-left {
+	background-color: blue;
+	flex: 2;
+	margin-right: 40px;
+}
+
+.main-content__col-right {
+	background-color: red;
+	flex: 5;
+	min-width: 500px;
+}
+
+.main-content__col-right > *:not(:last-child) {
+	margin-bottom: 30px;
+}
+
+/* PROFILE CARD */
+.profile-card {
+	background-color: orange;
+	height: 300px;
+	padding: 30px 10px;
+	width: 100%;
+}
+
+.profile-card__picture {
+	display: block;
+	margin: 0 auto;
+	width: 100px;
+}
+
+.profile-card__add-link {
+	display: block;
+	font-size: large;
+	margin: 40px 0;
+	text-align: center;
+}
+
+.profile-card__name {
+	text-align: center;
+}
+
+
+/* FEED CARD */
+.feed-card {
+	background-color: whitesmoke;
+	border: 3px solid gray;
+	border-radius: 10px;
+	height: 200px;
+}
+
+.feed-card__header {
+	background-color: green;
+
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+
+	height: 75px;
+	padding: 0 30px;
+}
+
+.feed-card__like-wrapper {
+	display: flex;
+}
+
+.feed-card__num-likes {
+	font-size: large;
+	font-weight: bold;
+	margin-right: 40px;
+}
+
+.feed-card__like-btn {
+	height: 30px;
+	width: 75px;
+}
+
+.feed-card__comment {
+	font-size: large;
+	line-height: 130%;
+	padding: 30px;
+}
