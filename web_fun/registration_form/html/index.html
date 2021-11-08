@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+		<title>Registration Form</title>
+	</head>
+	
+	<body>
+		<form>
+			<h1 class="groovy_text">
+				Registration Form
+			</h1>
+
+			<section>
+				<div>
+					<label class="groovy_text">First Name: *</label>      
+					<input type="text" name="first_name">
+				</div>
+				<div>
+					<label class="groovy_text">Last Name: *</label>       
+					<input type="text" name="last_name">
+				</div>
+				<div>
+					<label class="groovy_text">Email Address: *</label>   
+					<input type="text" name="email">
+				</div>
+				<div>
+					<label class="groovy_text">Password: *</label>        
+					<input type="password" name="password">
+				</div>
+				<div>
+					<label class="groovy_text">Confirm Password: *</label>
+					<input type="password" name="password">
+				</div>
+				<div>
+					<label class="groovy_text">Birthday: *</label>        
+					<input class="groovy_text" type="date" name = "dob">
+				</div>
+			</section>
+
+			<section>
+				<label class="groovy_text" style="display: block;">Gender Identity:</label>
+				<input type="radio" name="gender" value="male" id="male">
+				<label class="groovy_text" for="male">Male</label>
+				<input type="radio" name="gender" value="female" id="female">
+				<label class="groovy_text" for="female">Female</label>
+				<input type="radio" name="gender" value="non-binary" id="non-binary">
+				<label class="groovy_text" for="non-binary">Non-binary</label>
+				<input type="radio" name="gender" value="none" id="none">
+				<label class="groovy_text" for="none">I prefer not to answer</label>
+			</section>
+
+			<section>
+				<p class="groovy_text">A short description about myself:</p>
+				<textarea placeholder="Type here!!" cols="25" rows="5"></textarea>
+			</section>
+
+			<section>
+				<label class="groovy_text">Favorite Language:</label>
+				<select class="groovy_text">
+					<option>C</option>
+					<option>Python</option>
+					<option>Javascript</option>
+					<option>HTML</option>
+					<option>CSS</option>
+					<option>Java</option>
+				</select>
+			</section>
+
+			<section>
+				<input class="groovy_text" type="checkbox" id="email_agree">
+				<label class="groovy_text" for="email_agree">
+					Yes, I would like to receive
+					periodic email updates
+				</label>
+				<input class="groovy_text" type="submit" style="display: block;" value="Create account" onclick="return SubmitAction()">
+				<p class="groovy_text">*indicates required field</p>
+			</section>
+
+		</form>
+
+		<script src="../js/index.js"></script>
+	</body>
+</html>
