@@ -1,0 +1,146 @@
+/* BROWSER RESET */
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: "comic sans ms", "comic sans", cursive;
+}
+
+/* MAIN DISPLAY DIVS */
+.header,
+.main-content {
+	margin: 0 auto;
+	width: 800px
+}
+
+/* HEADER */
+.header-wrapper {
+	background-color: skyblue;
+}
+
+.header {
+	/* border: 2px solid black; */
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+	padding: 10px 0;
+}
+
+.header__title {
+	color: white;
+	font-size: xxx-large;
+}
+
+.header__city-wrapper {
+	/* border: 2px solid green; */
+	display: flex;
+	justify-content: space-between;
+	width: 40%;
+}
+
+.header__city {
+	color: white;
+	font-size: x-large;
+}
+
+.header__city:hover {
+	color: gray;
+	cursor: pointer;
+}
+
+/* MAIN CONTENT */
+.main-content__head {
+	align-items: center;
+	border-bottom: 3px solid black;
+	display: flex;
+	justify-content: space-between;
+	padding: 15px 0;
+}
+
+.main-content__body {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding-top: 20px;
+}
+
+
+/* FORECAST CARD */
+.forecast-card {
+	animation: fadein 4s;
+
+	align-items: center;
+	background-color: lightblue;
+	display: flex;
+	flex-direction: column;
+	padding: 8px 10px;
+	min-width: 21%;
+}
+
+@keyframes fadein {
+	from {opacity: 0;}
+	to {opacity: 1;}
+}
+
+.forecast-card__pic {
+	border-radius: 120px;
+	width: 160px;
+}
+
+.forecast-card > * {
+	margin-bottom: 12px;
+}
+
+.forecast-card__description {
+	font-size: large;
+	font-weight: bold;
+}
+
+.forecast-card__temp-wrapper {
+	display: flex;
+	justify-content: space-evenly;
+	margin-top: 5px;
+	width: 100%;
+}
+
+.forecast-card__high {
+	color: red;
+	font-size: large;
+}
+
+.forecast-card__low {
+	color: blue;
+	font-size: large;
+}
+
+/* COOKIES */
+.cookie-alert {
+	align-items: center;
+	background-color: lightgray;
+	display: flex;
+	padding: 5px 10px;
+	position: fixed;
+	bottom: 10px;
+	width: inherit;
+}
+
+.cookie-alert__icon {
+	flex: 1;
+}
+
+.cookie-alert__description {
+	flex: 5;
+	margin: 0 5px;
+}
+
+.cookie-alert__accept-btn {
+	background-color: royalblue;
+	color: white;
+	flex: 1;
+	padding: 5px 0;
+}
+
+.cookie-alert__accept-btn:hover {
+	color: gray;
+	cursor: pointer;
+}

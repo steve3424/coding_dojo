@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="index.css"/>
+
+		<title>Dojo Weather</title>
+	</head>
+
+	<body>
+		<div class="header-wrapper">
+
+			<!-- HEADER -->
+			<div class="header">
+				<h1 class="header__title">DojoWeather</h1>
+				<div class="header__city-wrapper">
+					<p class="header__city">Burbank</p>
+					<p class="header__city">Chicago</p>
+					<p class="header__city">Dallas</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="main-content">
+			<div class="main-content__head">
+				<h1 id="current-city">Burbank</h1>
+				<div class="temp-convert-wrapper">
+					<label>show temperature in</label>
+					<select id="temp-units-selector">
+						<option>&degC</option>
+						<option>&degF</option>
+					</select>
+				</div>
+			</div>
+
+			<div class="main-content__body">
+
+				<!-- FORECAST CARDS -->
+				<div class="forecast-card">
+					<h2 class="forecast-card__day"></h2>
+					<img 
+						class="forecast-card__pic"
+					>
+
+					<p class="forecast-card__description"></p>
+
+					<div class="forecast-card__temp-wrapper">
+						<p class="forecast-card__high"></p>
+						<p class="forecast-card__low"></p>
+					</div>
+				</div>
+				<div class="forecast-card">
+					<h2 class="forecast-card__day"></h2>
+					<img 
+						class="forecast-card__pic"
+					>
+					<p class="forecast-card__description"></p>
+
+					<div class="forecast-card__temp-wrapper">
+						<p class="forecast-card__high"></p>
+						<p class="forecast-card__low"></p>
+					</div>
+				</div>
+				<div class="forecast-card">
+					<h2 class="forecast-card__day"></h2>
+					<img 
+						class="forecast-card__pic"
+					>
+					<p class="forecast-card__description"></p>
+
+					<div class="forecast-card__temp-wrapper">
+						<p class="forecast-card__high"></p>
+						<p class="forecast-card__low"></p>
+					</div>
+				</div>
+				<div class="forecast-card">
+					<h2 class="forecast-card__day"></h2>
+					<img 
+						class="forecast-card__pic"
+					>
+					<p class="forecast-card__description"></p>
+
+					<div class="forecast-card__temp-wrapper">
+						<p class="forecast-card__high"></p>
+						<p class="forecast-card__low"></p>
+					</div>
+				</div>
+			</div>
+
+			<!-- COOKIES -->
+			<div class="cookie-alert">
+				<img 
+					class="cookie-alert__icon"
+					src="img/cookie.png" 
+					alt="cookie, not the good kind though"
+				>
+
+				<p class="cookie-alert__description">
+					<span>Stop! Cookie time.</span>
+					We use cookies (sadly not the edible ones) to personalize
+					content and ads, to provide social media features, and to 
+					analyse our traffic. 
+					<a href="#">Read more</a>
+				</p>
+
+				<input class="cookie-alert__accept-btn" type="button" value="I Accept">
+			</div>
+
+		</div>
+
+		<script src="index.js"></script>
+	</body>
+</html>
