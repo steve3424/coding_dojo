@@ -1,4 +1,5 @@
-// Fill out forecast cards
+// Forecast cards that were already created
+var active_forecasts = {};
 
 var days_of_week = [
 	"Sunday",
@@ -21,53 +22,78 @@ var day_index = todays_date.getDay();
 
 var forecast_cards = document.querySelectorAll(".forecast-card");
 function FillOutForecastCards() {
-	for(var i = 0; i < forecast_cards.length; ++i) {
-		var forecast_card = forecast_cards[i];
+	var current_city = document.querySelector("#current-city");
+	var cards = active_forecasts[current_city.innerHTML];
+	if(cards) {
+		for(var i = 0; i < forecast_cards.length; ++i) {
+			var forecast_card = forecast_cards[i];
+			forecast_card.innerHTML = cards[i];
+		}
 
-		// Set day
-		var forecast_card__day = forecast_card.querySelector(".forecast-card__day");
-		if(i === 0) {
-			forecast_card__day.innerHTML = "Today";
-		}
-		else if(i === 1) {
-			forecast_card__day.innerHTML = "Tomorrow";
-		}
-		else {
-			var new_day_index = (day_index + i) % days_of_week.length;
-			forecast_card__day.innerHTML = days_of_week[new_day_index];
-		}
-	
-		// Set img
-		var zero_one_two = Math.floor(Math.random() * 3);
-		var img_path = img_paths[zero_one_two];
-		var forecast_card__pic = forecast_card.querySelector(".forecast-card__pic");
-		forecast_card__pic.src = img_path;
-	
-		// Set description
-		var description = img_path.split("/")[1].split(".")[0].split("_").join(" ");
-		var forecast_card__description = forecast_card.querySelector(".forecast-card__description");
-		forecast_card__description.innerHTML = description;
-	
-		// Set temps
-		// Hardcoded in celsius, convert to fahrenheit if necessary
-		var forecast_card__high = forecast_card.querySelector(".forecast-card__high");
-		var forecast_card__low = forecast_card.querySelector(".forecast-card__low");
-		if(description.includes("sun")) {
-			forecast_card__high.innerHTML = "28&deg";
-			forecast_card__low.innerHTML = "16&deg";
-		}
-		else if(description.includes("rain")) {
-			forecast_card__high.innerHTML = "16&deg";
-			forecast_card__low.innerHTML = "5&deg";
-		}
-		else {
-			forecast_card__high.innerHTML = "20&deg";
-			forecast_card__low.innerHTML = "9&deg";
-		}
-	
 		if(document.querySelector("#temp-units-selector").value.includes("F")) {
-			forecast_card__high.innerHTML = CtoF(forecast_card__high) + "&deg";
-			forecast_card__low.innerHTML = CtoF(forecast_card__low) + "&deg";
+			var highs = document.querySelectorAll(".forecast-card__high");
+			var lows = document.querySelectorAll(".forecast-card__low");
+			for(var i = 0; i < highs.length; ++i) {
+				var forecast_card__high = highs[i];
+				var forecast_card__low = lows[i];
+				forecast_card__high.innerHTML = CtoF(forecast_card__high) + "&deg";
+				forecast_card__low.innerHTML = CtoF(forecast_card__low) + "&deg";
+			}
+		}
+	}
+	else {
+		active_forecasts[current_city.innerHTML] = [];
+		cards = active_forecasts[current_city.innerHTML];
+
+		for(var i = 0; i < forecast_cards.length; ++i) {
+			var forecast_card = forecast_cards[i];
+			// Set day
+			var forecast_card__day = forecast_card.querySelector(".forecast-card__day");
+			if(i === 0) {
+				forecast_card__day.innerHTML = "Today";
+			}
+			else if(i === 1) {
+				forecast_card__day.innerHTML = "Tomorrow";
+			}
+			else {
+				var new_day_index = (day_index + i) % days_of_week.length;
+				forecast_card__day.innerHTML = days_of_week[new_day_index];
+			}
+			
+			// Set img
+			var zero_one_two = Math.floor(Math.random() * 3);
+			var img_path = img_paths[zero_one_two];
+			var forecast_card__pic = forecast_card.querySelector(".forecast-card__pic");
+			forecast_card__pic.src = img_path;
+			
+			// Set description
+			var description = img_path.split("/")[1].split(".")[0].split("_").join(" ");
+			var forecast_card__description = forecast_card.querySelector(".forecast-card__description");
+			forecast_card__description.innerHTML = description;
+			
+			// Set temps
+			// Hardcoded in celsius, convert to fahrenheit if necessary
+			var forecast_card__high = forecast_card.querySelector(".forecast-card__high");
+			var forecast_card__low = forecast_card.querySelector(".forecast-card__low");
+			if(description.includes("sun")) {
+				forecast_card__high.innerHTML = "28&deg";
+				forecast_card__low.innerHTML = "16&deg";
+			}
+			else if(description.includes("rain")) {
+				forecast_card__high.innerHTML = "16&deg";
+				forecast_card__low.innerHTML = "5&deg";
+			}
+			else {
+				forecast_card__high.innerHTML = "20&deg";
+				forecast_card__low.innerHTML = "9&deg";
+			}
+			
+			if(document.querySelector("#temp-units-selector").value.includes("F")) {
+				forecast_card__high.innerHTML = CtoF(forecast_card__high) + "&deg";
+				forecast_card__low.innerHTML = CtoF(forecast_card__low) + "&deg";
+			}
+	
+			cards[i] = forecast_card.innerHTML;
 		}
 	}
 }
