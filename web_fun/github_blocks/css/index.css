@@ -1,0 +1,41 @@
+h1 {
+	font-family: fantasy;
+	text-align: center;
+}
+
+img {
+	height: 200px;
+}
+
+section {
+	margin: 0px auto;
+	width: 750px
+}
+
+div {
+	display: flex;
+	margin: 15px;
+	padding: 15px;
+	justify-content: space-between;
+}
+
+#div_1 {
+	background: repeating-linear-gradient(
+		to right,
+		red,
+		red 10px,
+		purple 10px,
+		purple 20px,
+		lightgreen 20px,
+		lightgreen 30px
+	);
+}
+
+#div_2 {
+	background-color: skyblue;
+	justify-content: space-evenly;
+}
+
+#div_3 {
+	background-color: gray;
+}

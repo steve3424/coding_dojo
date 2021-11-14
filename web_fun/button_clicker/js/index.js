@@ -17,6 +17,7 @@ function RemoveItem() {
 var add_def_btn = document.querySelector(".add-definition-card__btn");
 add_def_btn.onclick = RemoveItem;
 
+
 // Like buttons
 var like_buttons = document.querySelectorAll(".dictionary-entry__like-btn");
 for(var i in like_buttons) {
@@ -24,6 +25,5 @@ for(var i in like_buttons) {
 		var num_likes = parseInt(this.value);
 		num_likes += 1;
 		this.value = num_likes + " likes";
-		window.alert("Ninja was liked!");
 	}
 }
