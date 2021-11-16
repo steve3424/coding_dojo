@@ -1,61 +1,103 @@
+/*
+TODO: Anytime a change is made, the entire display string
+       is recreated from scratch. Maybe track this and only
+       change what is necessary.
+TODO: Add backspace
+*/
+
+// Linked list node
+// Each node is a number with the operation to it's right
+// The string_rep only includes this.num not this.op
 class Node {
 	constructor() {
 		this.num = null;
 		this.op = '';
 		this.string_rep = "";
+
 		this.next = null;
 	}
 }
 
+var head_node = new Node();
+var current_node = head_node;
+
 var display = document.querySelector("#display");
-var head = new Node();
-var current = head;
 
 function press(num) {
-	if(current.op.length > 0) {
+	// If an operation was already attached to this node
+	// it is time to make a new node
+	if(current_node.op.length > 0) {
 		var n = new Node();
-		current.next = n;
-		current = n;
+		current_node.next = n;
+		current_node = n;
 	}
 
-	current.string_rep += num;
-	current.num = parseFloat(current.string_rep);
+	// The user pressing numbers will modify the string_rep
+	// then that will update this.num
+	current_node.string_rep += num;
+	current_node.num = parseFloat(current_node.string_rep);
 
 	DisplayAllNodes();
 }
 
 function press_dot() {
-	if(current.num != null && 
-	   !current.string_rep.includes('.') &&
-	   current.op.length === 0) 
+	// Only allow a dot press if there already is a num: (.333 is not allowed but 0.333 is)
+	// Only allow dot if one doesn't exist in current num
+	// Don't allow dot if op was already attached. That would result in
+	// a display string like 3 * .
+
+	if(current_node.num != null && 
+	   !current_node.string_rep.includes('.') &&
+	   current_node.op.length === 0) 
 	{
-		current.string_rep += '.';
-		console.log(current.string_rep);
-		current.num = parseFloat(current.string_rep);
+		current_node.string_rep += '.';
+		current_node.num = parseFloat(current_node.string_rep);
 
 		DisplayAllNodes();
 	}
 }
 
 function setOP(op_char) {
-	if(current.num != null)
+	// Must be num to attach op
+	if(current_node.num != null)
 	{
-		if(current.string_rep[current.string_rep.length - 1] === '.') {
-			current.string_rep += '0';
+		// If the last thing added to num was a decimal and no number
+		// was added after, add a 0 to end of num
+		if(current_node.string_rep[current_node.string_rep.length - 1] === '.') {
+			current_node.string_rep += '0';
 		}
-		current.op = op_char;
+		current_node.op = op_char;
+
 		DisplayAllNodes();
 	}
 }
 
+/*
+The basic strategy is to walk the linked list 2 times, first doing 
+mult / div, then plus / minus.
+
+Every node except the last node will have an op. That means every
+node with an op will have a node after it.
+
+We grab the current value, apply the op to current val and next val, and
+store it in next.num. Then we unlink the current node from the list and
+continue.
+
+By the end, our prev node has the full result so we can just set that to
+the new head node after we reprocess it.
+*/
+
 function calculate() {
-	if(current.op.length > 0) {
-		current.op = '';
+	// Delete last op if no num was created after
+	// We don't want "2 + 3 +"
+	// Turn it into "2 + 3"
+	if(current_node.op.length > 0) {
+		current_node.op = '';
 	}
 
-	// priority ops first
+	// mult / divide first
 	var prev = null;
-	var n = head;
+	var n = head_node;
 	while(n) {
 		if(n.op === '*') {
 			n.next.num = n.num * n.next.num;
@@ -73,9 +115,9 @@ function calculate() {
 		n = n.next;
 	}
 
-	// plus minus
+	// plus / minus
 	prev = null;
-	n = head;
+	n = head_node;
 	while(n) {
 		if(n.op === '+') {
 			n.next.num = n.num + n.next.num;
@@ -87,10 +129,11 @@ function calculate() {
 		n = n.next;
 	}
 
-	head = prev;
-	head.op = '';
-	head.string_rep = "" + head.num;
-	current = head;
+	// Set result node (prev) to be new head
+	head_node = prev;
+	head_node.op = '';
+	head_node.string_rep = "" + head_node.num;
+	current_node = head_node;
 
 	DisplayAllNodes();
 }
@@ -99,14 +142,14 @@ function clr() {
 	display.innerHTML = "";
 
 	// TODO: Does this enable all nodes for the garbage collector ??
-	head = null;
-	head = new Node();
-	current = head;
+	head_node = null;
+	head_node = new Node();
+	current_node = head_node;
 }
 
 function DisplayAllNodes() {
 	var display_string = "";
-	var n = head;
+	var n = head_node;
 	while(n != null) {
 		display_string += n.string_rep;
 		if(n.op.length > 0) {
