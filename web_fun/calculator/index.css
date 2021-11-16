@@ -1,0 +1,83 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	padding-top: 40px;
+	text-align: center;
+}
+
+#calculator {
+	background-color: #222;
+	display: inline-block;
+	padding: 15px;
+	width: 230px;
+}
+
+#display {
+	font-size: 30px;
+	min-height: 40px;
+	text-align: right;
+	overflow: auto;
+	white-space: nowrap;
+}
+
+/* SCROLL BAR STYLE FROM CODEPEN:
+https://codepen.io/GhostRider/pen/GHaFw */
+#display::-webkit-scrollbar-track
+{
+	background-color: #222;
+}
+
+#display::-webkit-scrollbar
+{
+	height: 6px;
+}
+
+#display::-webkit-scrollbar-thumb
+{
+	background-color: #ccc;
+}
+
+.row {
+	display: flex;
+	justify-content: space-between;
+	padding: 7px 0;
+}
+
+button,
+#display {
+	color: white;
+	font-family: monospace;
+}
+
+button {
+	align-items: center;
+	background-color: #666;
+	border: none;
+	border-radius: 50px;
+	cursor: pointer;
+	display: inline-flex;
+	font-size: 25px;
+	height: 40px;
+	justify-content: center;
+	padding: 10px;
+	width: 40px;
+}
+
+button:hover {
+	transform: translate(1px, 1px);
+}
+
+.operator {
+	background-color: darkorange;
+}
+
+#equals {
+	background-color: #ccc;
+	color: #222;
+	font-size: 40px;
+	width: 100%;
+}
