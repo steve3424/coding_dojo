@@ -75,9 +75,14 @@ button:hover {
 	background-color: darkorange;
 }
 
-#equals {
+#equals,
+#backspace {
 	background-color: #ccc;
 	color: #222;
 	font-size: 40px;
 	width: 100%;
+}
+
+#backspace {
+	font-size: 30px;
 }

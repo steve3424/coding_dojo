@@ -10,7 +10,6 @@ TODO: Add backspace
 // The string_rep only includes this.num not this.op
 class Node {
 	constructor() {
-		this.num = null;
 		this.op = '';
 		this.string_rep = "";
 
@@ -32,10 +31,7 @@ function press(num) {
 		current_node = n;
 	}
 
-	// The user pressing numbers will modify the string_rep
-	// then that will update this.num
 	current_node.string_rep += num;
-	current_node.num = parseFloat(current_node.string_rep);
 
 	DisplayAllNodes();
 }
@@ -46,12 +42,11 @@ function press_dot() {
 	// Don't allow dot if op was already attached. That would result in
 	// a display string like 3 * .
 
-	if(current_node.num != null && 
+	if(current_node.string_rep.length > 0 &&
 	   !current_node.string_rep.includes('.') &&
 	   current_node.op.length === 0) 
 	{
 		current_node.string_rep += '.';
-		current_node.num = parseFloat(current_node.string_rep);
 
 		DisplayAllNodes();
 	}
@@ -59,7 +54,7 @@ function press_dot() {
 
 function setOP(op_char) {
 	// Must be num to attach op
-	if(current_node.num != null)
+	if(current_node.string_rep.length > 0)
 	{
 		// If the last thing added to num was a decimal and no number
 		// was added after, add a 0 to end of num
@@ -80,7 +75,7 @@ Every node except the last node will have an op. That means every
 node with an op will have a node after it.
 
 We grab the current value, apply the op to current val and next val, and
-store it in next.num. Then we unlink the current node from the list and
+store it in next.string_rep. Then we unlink the current node from the list and
 continue.
 
 By the end, our prev node has the full result so we can just set that to
@@ -100,13 +95,13 @@ function calculate() {
 	var n = head_node;
 	while(n) {
 		if(n.op === '*') {
-			n.next.num = n.num * n.next.num;
+			n.next.string_rep = parseFloat(n.string_rep) * parseFloat(n.next.string_rep);
 			if(prev) {
 				prev.next = n.next;
 			}
 		}
 		else if(n.op === '/') {
-			n.next.num = n.num / n.next.num;
+			n.next.string_rep = parseFloat(n.string_rep) / parseFloat(n.next.string_rep);
 			if(prev) {
 				prev.next = n.next;
 			}
@@ -120,10 +115,10 @@ function calculate() {
 	n = head_node;
 	while(n) {
 		if(n.op === '+') {
-			n.next.num = n.num + n.next.num;
+			n.next.string_rep = parseFloat(n.string_rep) + parseFloat(n.next.string_rep);
 		}
 		else if(n.op === '-') {
-			n.next.num = n.num - n.next.num;
+			n.next.string_rep = parseFloat(n.string_rep) - parseFloat(n.next.string_rep);
 		}
 		prev = n;
 		n = n.next;
@@ -131,8 +126,8 @@ function calculate() {
 
 	// Set result node (prev) to be new head
 	head_node = prev;
-	head_node.op = '';
-	head_node.string_rep = "" + head_node.num;
+	// String rep turns into a float so we convert it back
+	head_node.string_rep = head_node.string_rep.toString();
 	current_node = head_node;
 
 	DisplayAllNodes();
@@ -147,11 +142,30 @@ function clr() {
 	current_node = head_node;
 }
 
+function backspace() {
+	if(current_node.op.length > 0) {
+		current_node.op = '';
+		DisplayAllNodes();
+	}
+	else if(current_node.string_rep.length > 0) {
+		current_node.string_rep = current_node.string_rep.substring(0, current_node.string_rep.length - 1);
+		current_node.num = parseFloat(current_node.string_rep);
+		DisplayAllNodes();
+	}
+
+	if(current_node.string_rep.length === 0) {
+		// go to previous node
+		console.log("should go to prev node now");
+	}
+}
+
 function DisplayAllNodes() {
 	var display_string = "";
 	var n = head_node;
 	while(n != null) {
-		display_string += n.string_rep;
+		if(n.string_rep.length > 0) {
+			display_string += n.string_rep;
+		}
 		if(n.op.length > 0) {
 			display_string += ' ' + n.op + ' ';
 		}
