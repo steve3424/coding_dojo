@@ -270,5 +270,13 @@ window.onkeyup = function (event) {
 		case 13: {
 			calculate();
 		} break;
+
+		case 8: {
+			backspace();
+		} break;
+
+		default: {
+			console.log("That button does nothing...");
+		} break;
 	}
 }
