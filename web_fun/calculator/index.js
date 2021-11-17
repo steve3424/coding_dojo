@@ -13,6 +13,7 @@ class Node {
 		this.op = '';
 		this.string_rep = "";
 
+		this.prev = null;
 		this.next = null;
 	}
 }
@@ -27,6 +28,7 @@ function press(num) {
 	// it is time to make a new node
 	if(current_node.op.length > 0) {
 		var n = new Node();
+		n.prev = current_node;
 		current_node.next = n;
 		current_node = n;
 	}
@@ -126,8 +128,12 @@ function calculate() {
 
 	// Set result node (prev) to be new head
 	head_node = prev;
+	head_node.op = '';
+	head_node.prev = null;
+	head_node.next = null;
 	// String rep turns into a float so we convert it back
 	head_node.string_rep = head_node.string_rep.toString();
+
 	current_node = head_node;
 
 	DisplayAllNodes();
@@ -154,8 +160,9 @@ function backspace() {
 	}
 
 	if(current_node.string_rep.length === 0) {
-		// go to previous node
-		console.log("should go to prev node now");
+		if(current_node.prev) {
+			current_node = current_node.prev;
+		}
 	}
 }
 
