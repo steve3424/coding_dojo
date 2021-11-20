@@ -1,0 +1,25 @@
+.row > * {
+	margin: 10px;
+}
+
+.row {
+	background-color: blue;
+	display: flex;
+	height: 80px;
+	justify-content: space-between;
+}
+
+.col {
+	background-color: red;
+	flex: 1;
+}
+
+.col-2 {
+	background-color: red;
+	flex: 2;
+}
+
+.col-3 {
+	background-color: red;
+	flex: 3;
+}
