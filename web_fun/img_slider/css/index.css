@@ -1,0 +1,10 @@
+div {
+	background: red;
+	text-align: center;
+}
+
+#header {
+	color: black;
+	font-weight: bold;
+	display: inline-block;
+}
