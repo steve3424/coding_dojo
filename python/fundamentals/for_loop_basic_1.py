@@ -46,14 +46,17 @@ def FlexibleCounter():
             print(i)
 
 def PrintMenu():
-    print("Choose a number and press enter!")
-    print("[1] Basic")
-    print("[2] Multiples of Five")
-    print("[3] Counting, the Dojo Way");
-    print("[4] Whoa. That Sucker's Huge");
-    print("[5] Countdown by Fours");
-    print("[6] Flexible Counter");
-    print("[anything else] Exit")
+    print("\n***************** MENU ******************")
+    print("*  Choose a number and press enter!\t*")
+    print("*  [1] Basic\t\t\t\t*")
+    print("*  [2] Multiples of Five\t\t*")
+    print("*  [3] Counting, the Dojo Way\t\t*")
+    print("*  [4] Whoa. That Sucker's Huge\t\t*")
+    print("*  [5] Countdown by Fours\t\t*")
+    print("*  [6] Flexible Counter\t\t\t*")
+    print("*  [anything else] Exit\t\t\t*")
+    print("*****************************************")
+    print("> ", end='')
 
 if __name__ == "__main__":
     ask = True
