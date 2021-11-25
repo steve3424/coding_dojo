@@ -16,6 +16,9 @@ class Player:
     def PlayCard(self):
         return self.hand.GetTopCard()
 
+    def GetNumCards(self):
+        return len(self.hand.cards)
+
     def __str__(self) -> str:
         return (f"{self.name}\n"
                 f"{len(self.hand.cards)}\n"
