@@ -54,28 +54,26 @@ def PrintMenu():
     print("*  [4] Whoa. That Sucker's Huge\t\t*")
     print("*  [5] Countdown by Fours\t\t*")
     print("*  [6] Flexible Counter\t\t\t*")
-    print("*  [anything else] Exit\t\t\t*")
+    print("*  [Ctrl-C] Exit\t\t\t*")
     print("*****************************************")
     print("> ", end='')
 
 if __name__ == "__main__":
-    ask = True
-    while ask:
+    while True:
         PrintMenu()
 
         c = input()
-        if c == "1":
+        if c == '1':
             Basic()
-        elif c == "2":
+        elif c == '2':
             MultiplesOfFive()
-        elif c == "3":
+        elif c == '3':
             CountingDojoWay()
-        elif c == "4":
+        elif c == '4':
             WhoaSucker()
-        elif c == "5":
+        elif c == '5':
             Countdown()
-        elif c == "6":
+        elif c == '6':
             FlexibleCounter()
         else:
-            print("Leaving...")
-            ask = False
+            print("Can't recognize input...\nTry again...")
