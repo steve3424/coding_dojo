@@ -1,14 +1,5 @@
-from modularizing.bank_account import BankAccount
-
-class TestAccount:
-    def __init__(self):
-        self.balance = 500.00
-    def Deposit(self, amount):
-        self.balance += amount
-    def __str__(self) -> str:
-        return f"balance:  ${self.balance:.2f}"
-    def __repr__(self) -> str:
-        return str(self)
+from bank_account import BankAccount
+from functions_intermediate import printInfo
 
 class User:
     def __init__(self, full_name, email) -> None:
@@ -64,9 +55,9 @@ class User:
             print(f"{key.capitalize()} account:")
             print(account)
 
-
-acc = [BankAccount(), TestAccount()]
-for a in acc:
-    a.Deposit(200)
-
-print(acc)
+if __name__ == "__main__":
+    user1 = User("Jim Smith", "js@emaildotcom")
+    print(user1)
+    user1.Deposit(500.50, "checking")
+    user1.AddAccount("savings", 0.05, 1000)
+    user1.DisplayAccountInfoAll()
