@@ -1,11 +1,3 @@
-"""
-Question 1: Is this what the Ninja Bonus was asking for?
-Question 2: Why do we need a classmethod, which accepts the class as argument instead of self,
-            when we can just access the class by typing BankAccount? I guess if we were to change
-            the class name, this would break, whereas using a classmethod won't. Is there any other
-            reason?
-"""
-
 class BankAccount:
     all_accounts = []
 
@@ -40,7 +32,9 @@ class BankAccount:
     def __repr__(self) -> str:
         return str(self)
 
-a1 = BankAccount(0.05, 10000)
-a1.Deposit(200).Deposit(200).Deposit(200).Withdraw(500).YieldInterest()
-a2 = BankAccount(0.05, 10000)
-a2.Deposit(100).Deposit(100).Withdraw(500).Withdraw(500).Withdraw(500).Withdraw(500).YieldInterest()
+if __name__ == "__main__":
+    a1 = BankAccount(0.05, 10000)
+    a1.Deposit(200).Deposit(200).Deposit(200).Withdraw(500).YieldInterest()
+    a2 = BankAccount(0.05, 10000)
+    a2.Deposit(100).Deposit(100).Withdraw(500).Withdraw(500).Withdraw(500).Withdraw(500).YieldInterest()
+    BankAccount.PrintAllAccounts()
