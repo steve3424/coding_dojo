@@ -140,3 +140,6 @@ class War:
             if len(p2.hand.cards) == 0:
                 print(f"{p1.name} wins!")
                 break
+        
+        def __str__(self):
+            return "War"
