@@ -141,5 +141,5 @@ class War:
                 print(f"{p1.name} wins!")
                 break
         
-        def __str__(self):
-            return "War"
+    def __str__(self):
+        return "War"
