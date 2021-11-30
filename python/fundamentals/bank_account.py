@@ -1,3 +1,7 @@
+"""
+Not sure exactly what the ninja bonus was referring to. I think it was referring to
+storing all instances in a single class variable list.
+"""
 class BankAccount:
     all_accounts = []
 
@@ -34,7 +38,9 @@ class BankAccount:
 
 if __name__ == "__main__":
     a1 = BankAccount(0.05, 10000)
-    a1.Deposit(200).Deposit(200).Deposit(200).Withdraw(500).YieldInterest()
     a2 = BankAccount(0.05, 10000)
+    BankAccount.PrintAllAccounts()
+
+    a1.Deposit(200).Deposit(200).Deposit(200).Withdraw(500).YieldInterest()
     a2.Deposit(100).Deposit(100).Withdraw(500).Withdraw(500).Withdraw(500).Withdraw(500).YieldInterest()
     BankAccount.PrintAllAccounts()
