@@ -1,5 +1,4 @@
 from bank_account import BankAccount
-from functions_intermediate import printInfo
 
 class User:
     def __init__(self, full_name, email) -> None:
