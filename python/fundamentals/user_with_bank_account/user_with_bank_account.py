@@ -56,7 +56,6 @@ class User:
 
 if __name__ == "__main__":
     user1 = User("Jim Smith", "js@emaildotcom")
-    print(user1)
     user1.Deposit(500.50, "checking")
     user1.AddAccount("savings", 0.05, 1000)
     user1.DisplayAccountInfoAll()
