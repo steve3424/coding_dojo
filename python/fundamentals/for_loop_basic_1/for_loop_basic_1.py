@@ -1,3 +1,5 @@
+from menu import RunMenu, FuncObj
+
 def Basic():
     print("Basic - Print all integers from 0 to 150.")
     for i in range(1, 151):
@@ -27,7 +29,7 @@ def WhoaSucker():
 
 def Countdown():
     print("Countdown by Fours - Print positive numbers starting at 2018, counting down by fours.")
-    for i in reversed(range(0, 2019, 4)):
+    for i in reversed(range(2, 2019, 4)):
         print(i)
 
 def FlexibleCounter():
@@ -45,35 +47,7 @@ def FlexibleCounter():
         if i % mult == 0:
             print(i)
 
-def PrintMenu():
-    print("\n***************** MENU ******************")
-    print("*  Choose a number and press enter!\t*")
-    print("*  [1] Basic\t\t\t\t*")
-    print("*  [2] Multiples of Five\t\t*")
-    print("*  [3] Counting, the Dojo Way\t\t*")
-    print("*  [4] Whoa. That Sucker's Huge\t\t*")
-    print("*  [5] Countdown by Fours\t\t*")
-    print("*  [6] Flexible Counter\t\t\t*")
-    print("*  [Ctrl-C] Exit\t\t\t*")
-    print("*****************************************")
-    print("> ", end='')
-
 if __name__ == "__main__":
-    while True:
-        PrintMenu()
-
-        c = input()
-        if c == '1':
-            Basic()
-        elif c == '2':
-            MultiplesOfFive()
-        elif c == '3':
-            CountingDojoWay()
-        elif c == '4':
-            WhoaSucker()
-        elif c == '5':
-            Countdown()
-        elif c == '6':
-            FlexibleCounter()
-        else:
-            print("Can't recognize input...\nTry again...")
+    functions = [FuncObj(Basic), FuncObj(MultiplesOfFive), FuncObj(CountingDojoWay), FuncObj(WhoaSucker), FuncObj(Countdown), FuncObj(FlexibleCounter)]
+    func_to_run = functions[RunMenu("Choose a function below", functions)]
+    func_to_run.func()

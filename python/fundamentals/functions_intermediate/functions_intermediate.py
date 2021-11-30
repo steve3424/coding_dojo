@@ -1,3 +1,5 @@
+from menu import RunMenu, FuncObj
+
 def UpdateValsInDictionary():
     x = [ [5,2,3], [10,8,9] ] 
     print("Old x:")
@@ -49,7 +51,7 @@ def IterateDictionary():
         print("first_name - {0} \tlast_name - {1}".format(d["first_name"], d["last_name"]))
     print('\n')
 
-def iterateDictionary2():
+def IterateDictionary2():
     k = "last_name"
     students = [
         {"first_name" : "Michael", "last_name" : "Jordan"},
@@ -61,7 +63,7 @@ def iterateDictionary2():
         print(f"{d[k] if k in d.keys() else 'none'}")
     print('\n')
 
-def printInfo():
+def PrintInfo():
     dojo = {
         "locations" : ["San Jose", "Seattle", "Dallas", "Chicago", "Tulsa", "DC", "Burbank"],
         "instructors" : ["Michael", "Amy", "Eduardo", "Josh", "Graham", "Patrick", "Minh", "Devon"],
@@ -72,29 +74,7 @@ def printInfo():
             print(i)
         print('\n')
 
-def PrintMenu():
-    print("\n********************* MENU **********************")
-    print("*  Choose a number and press enter!\t\t*")
-    print("*  [1] Update Vals in Dictionary\t\t*")
-    print("*  [2] Iterate through list of Dictionaries\t*")
-    print("*  [3] Get vals from list of dictionaries\t*")
-    print("*  [4] Print dictionary info\t\t\t*")
-    print("*  [Ctrl-C] Exit\t\t\t\t*")
-    print("*************************************************")
-    print("> ", end='')
-
 if __name__ == "__main__":
-    while True:
-        PrintMenu()
-
-        c = input()
-        if c == '1':
-            UpdateValsInDictionary()
-        elif c == '2':
-            IterateDictionary()
-        elif c == '3':
-            iterateDictionary2()
-        elif c == '4':
-            printInfo()
-        else:
-            print("Can't recognize input...\nTry again...")
+    functions = [FuncObj(UpdateValsInDictionary), FuncObj(IterateDictionary), FuncObj(IterateDictionary2), FuncObj(PrintInfo)]
+    func_to_run = functions[RunMenu("Choose a function below", functions)]
+    func_to_run.func()

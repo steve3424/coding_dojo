@@ -1,6 +1,17 @@
 """
 Module to print a cmd line menu of a given list of items and return the index of the selected item
 """
+class FuncObj:
+    """
+    The only purpose of this is so str() can be called on functions
+    so they can be used in RunMenu()
+    """
+    def __init__(self, func):
+        self.func = func
+
+    def __str__(self) -> str:
+        return self.func.__name__;
+
 
 def PrintMenu(header_string, objects: list):
     """
@@ -54,7 +65,7 @@ def PrintMenu(header_string, objects: list):
         s = f"{s[:-2]}{' ' * spaces_to_add} *\n"
         final_strings.append(s)
 
-    spaces_to_add = max_width - len(exit_string) - 1
+    spaces_to_add = max_width - len(exit_string)
     exit_string = f"{exit_string[:-2]}{' ' * spaces_to_add} *\n"
     final_strings.append(exit_string)
     
