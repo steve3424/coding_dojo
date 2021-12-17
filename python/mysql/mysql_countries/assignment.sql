@@ -58,7 +58,7 @@ use world;
 -- and cities.population > 500000;
 -- 
 -- -- Query 8
--- select region, count(region)
+-- select region, count(id) as num_countries
 -- from countries
--- group by countries.region
--- order by count(countries.region) desc;
+-- group by region
+-- order by num_countries desc;
