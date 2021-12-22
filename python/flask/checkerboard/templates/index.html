@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+	</head>
+	<body>
+
+			<h1>** CHECKERBOARD **</h1>
+			<div class="checkerboard">
+				{% set ns = namespace(toggle='a') %}
+				{% for i in range(rows) %}
+					{% if i%2 == 0 %}
+						{% set ns.toggle='a' %}
+					{% else %}
+						{% set ns.toggle='b' %}
+					{% endif %}
+					<div class="checkerboard__row">
+						{% for i in range(cols) %}
+							{% if ns.toggle == 'a' %}
+								<div class="checkerboard__cell-a" style="background-color: {{color_1}};"></div>
+								{% set ns.toggle='b' %}
+							{% else %}
+								<div class="checkerboard__cell-b" style="background-color: {{color_2}};"></div>
+								{% set ns.toggle='a' %}
+							{% endif %}
+						{% endfor %}
+					</div>
+				{% endfor %}
+				<!-- <div class="checkerboard__row">
+					<div class="checkerboard__cell"></div>
+					<div class="checkerboard__cell-1"></div>
+					<div class="checkerboard__cell"></div>
+				</div>
+				<div class="checkerboard__row">
+					<div class="checkerboard__cell-1"></div>
+					<div class="checkerboard__cell"></div>
+					<div class="checkerboard__cell-1"></div>
+				</div>
+				<div class="checkerboard__row">
+					<div class="checkerboard__cell"></div>
+					<div class="checkerboard__cell-1"></div>
+					<div class="checkerboard__cell"></div>
+				</div>
+				<div class="checkerboard__row">
+					<div class="checkerboard__cell-1"></div>
+					<div class="checkerboard__cell"></div>
+					<div class="checkerboard__cell-1"></div>
+				</div> -->
+			</div>
+		
+	</body>
+</html>
+
