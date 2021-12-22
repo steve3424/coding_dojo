@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<body>
+		<div id="flex_div">
+			{% for i in range(num) %}
+			<div class="box" style="background-color: {{col}}"></div>
+			{% endfor %}
+		</div>
+	</body>
+
+	<style>
+		#flex_div {
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		.box {
+			height: 100px;
+			width: 100px;
+			margin: 0px 10px 10px 0px;
+		}
+	</style>
+</html>
+
