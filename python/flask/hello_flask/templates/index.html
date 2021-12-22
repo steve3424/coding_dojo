@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Just Dessert</title>
+</head>
+<body>
+    <main>
+        <!-- HEADER -->
+        <header>
+            <h1 class="header__title">Just<span>Dessert</span></h1>
+            <div class="header__btn-wrapper">
+                <input 
+                    class="header__join-btn"
+                    type="button" 
+                    value="Join"
+                >
+                <input 
+                    class="header__login-btn"
+                    type="button" 
+                    value="Login"
+                >
+            </div>
+        </header>
+
+        <!-- SEARCH SECTION -->
+        <section class="search">
+            <div class="search__input">
+                <input class="search__text" type="search" placeholder="Search Here">
+                <input class="search__btn" type="button" value="Go">
+            </div>
+
+            <div class="search__item">
+                <img 
+                    class="search__icon"
+                    src="img/cake.png" 
+                    alt="Cake Icon"
+                >
+                <label class="search__label">
+                    Cake
+                </label>
+            </div>
+            <div class="search__item">
+                <img 
+                    class="search__icon"
+                    src="img/cookie.png" 
+                    alt="Cookie Icon"
+                >
+                <label class="search__label">
+                    Cookie
+                </label>
+            </div>
+            <div class="search__item">
+                <img 
+                    class="search__icon"
+                    src="img/ice-cream.png" 
+                    alt="Ice Cream Icon"
+                >
+                <label class="search__label">
+                    Ice Cream
+                </label>
+            </div>
+            <div class="search__item">
+                <img 
+                    class="search__icon"
+                    src="img/pie.png" 
+                    alt="Pie Icon"
+                >
+                <label class="search__label">
+                    Pie
+                </label>
+            </div>
+        </section>
+
+        <!-- MAIN CONTENT -->
+        <section class="main-content">
+            <section class="main-content__col-left">
+
+                <!-- RECIPE OF THE DAY -->
+                <div class="rotd">
+                    <h2>Recipe of the Day</h2>
+
+                    <!-- RECIPE CARD -->
+                    <div class="recipe-card">
+                        <img 
+                            class="recipe-card__pic"
+                            src="img/orange-tart.jpg" 
+                            alt="orange-tart image"
+                        >
+    
+                        <footer class="recipe-card__footer">
+                            <div>
+                                <p>
+                                    Orange Tea Jelly Tart
+                                </p>
+                                <p>
+                                    By: 
+                                    <a href="#">yuripiano</a>
+                                </p>
+                            </div>
+                            <div class="recipe-card__likes">
+                                <img 
+                                    class="recipe-card__heart"
+                                    src="img/heart.png" 
+                                    alt="Heart icon"
+                                >
+                                <p class="recipe-card__num-likes">
+                                    68
+                                </p>
+                            </div>
+                        </footer>
+                    </div>
+
+                    <a class="rotd__link" href="">See Full Recipe</a>
+                    <p class="rotd__full-recipe">
+                        This is the full recipe it is good we like it yummy
+                        taste like alot very good eat much good eat <br>
+                        This is the full recipe it is good we like it yummy
+                        taste like alot very good eat much good eat <br>
+                        This is the full recipe it is good we like it yummy
+                        taste like alot very good eat much good eat <br>
+                        This is the full recipe it is good we like it yummy
+                        taste like alot very good eat much good eat <br>
+                    </p>
+                </div>
+            </section>
+
+
+            <section class="main-content__col-right">
+
+                <!-- RECOMMENDED RECIPES -->
+                <h2 class="recommended-title">Recommended for you:</h2>
+
+                <div class="recipe-card">
+                    <img 
+                        class="recipe-card__pic"
+                        src="img/macarons.jpg" 
+                        alt="macarons image"
+                    >
+
+                    <footer class="recipe-card__footer">
+                        <div>
+                            <p>
+                                Macarons
+                            </p>
+                            <p>
+                                By: 
+                                <a href="#">EmilieW</a>
+                            </p>
+                        </div>
+                        <div class="recipe-card__likes">
+                            <img 
+                                class="recipe-card__heart"
+                                src="img/heart.png" 
+                                alt="Heart icon"
+                            >
+                            <p class="recipe-card__num-likes">
+                                212
+                            </p>
+                        </div>
+                    </footer>
+                </div>
+
+                <div class="recipe-card">
+                    <img 
+                        class="recipe-card__pic"
+                        src="img/creme-brulee.jpg"
+                        alt="creme brulee image"
+                    >
+
+                    <footer class="recipe-card__footer">
+                        <div>
+                            <p>
+                                Creme Brulee
+                            </p>
+                            <p>
+                                By: 
+                                <a href="#">MarisaG</a>
+                            </p>
+                        </div>
+                        <div class="recipe-card__likes">
+                            <img 
+                                class="recipe-card__heart"
+                                src="img/heart.png" 
+                                alt="Heart icon"
+                            >
+                            <p class="recipe-card__num-likes">
+                                33
+                            </p>
+                        </div>
+                    </footer>
+                </div>
+            </section>
+        </section>
+    </main>
+    
+    <script src="script.js"></script>
+</body>
+</html>
