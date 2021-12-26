@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+	</head>
+	<body>
+		<h1>Counter</h1>
+		<p>{{num_visits}}</p>
+		<a href="/destroy_session">Reset Session</a>
+		<a href="/add_2">add 2</a>
+		<form action="/add_num">
+			<label for="num">Quantity</label>
+			<input type="text">
+		</form>
+		<script src="{{ url_for('static', filename='script.js') }}"></script>
+	</body>
+</html>
