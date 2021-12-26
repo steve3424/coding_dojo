@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+	</head>
+	<body>
+		<div class="main">
+			<h1 class="score">Your <span class="score__gold">Gold</span>: {{gold}}</h1>
+
+			<div class="cards-wrapper">
+				<form class="card" action="/process_money" method="post">
+					<h1 class="card__title">Farm</h1>
+					<p class="card__label">(+ 10-20 gold)</p>
+					<input class="card__submit" type="submit" value="Find Gold!">
+					<input type="hidden" name="building" value="farm">
+				</form>
+				<form class="card" action="/process_money" method="post">
+					<h1 class="card__title">Cave</h1>
+					<p class="card__label">(+ 5-10 gold)</p>
+					<input class="card__submit" type="submit" value="Find Gold!">
+					<input type="hidden" name="building" value="cave">
+				</form>
+				<form class="card" action="/process_money" method="post">
+					<h1 class="card__title">House</h1>
+					<p class="card__label">(+ 2-5 gold)</p>
+					<input class="card__submit" type="submit" value="Find Gold!">
+					<input type="hidden" name="building" value="house">
+				</form>
+				<form class="card" action="/process_money" method="post">
+					<h1 class="card__title">Casino</h1>
+					<p class="card__label">(+/- 0-50 gold)</p>
+					<input class="card__submit" type="submit" value="Find Gold!">
+					<input type="hidden" name="building" value="casino">
+				</form>
+			</div>
+
+			<h1 class="activities">Activities:</h1>
+			<div class="activites__text">
+				{% for log_entry in log|reverse %}
+					<p style="color: {{log_entry['color']}}">{{log_entry['string']}}</p>
+				{% endfor %}
+			</div>
+
+			<a href="/clear_session">Reset</a>
+		</div>
+
+	</body>
+</html>
