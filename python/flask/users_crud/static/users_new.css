@@ -7,7 +7,7 @@
 }
 
 form {
-	background-color: #3e3e3f;
+	background-color: #009879;
 	border-radius: 5px;
 	max-width: 400px;
 	margin: 0 auto;
@@ -15,15 +15,17 @@ form {
 }
 
 .form__title {
-	color: peru;
+	color: #ffffff;
 	margin: 20px 0;
 	text-align: center;
 }
 
 .form__input {
+	border: none;
 	border-radius: 5px;
 	display: block;
-	margin: 10px 0;
+	margin-top: 10px;
+	margin-bottom: 30px;
 	padding: 5px 7px;
 	width: 100%;
 }
@@ -37,20 +39,4 @@ form {
     display: flex;
     justify-content: space-between;
 	padding: 10px 5px;
-}
-
-.form__button {
-	background-color: gold;
-	border: none;
-	border-radius: 3px;
-	color: black;
-	font-size: 1em;
-	font-weight: 700;
-	padding: 7px 10px;
-    text-decoration: none;
-}
-
-.form__button:hover {
-	cursor: pointer;
-	transform: translate(1px, 1px);
 }
