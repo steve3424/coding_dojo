@@ -28,6 +28,12 @@ def UserAdd():
 
     return redirect("/users")
 
+@app.route("/users/<int:user_id>")
+def UserShow(user_id):
+    print(user_id)
+    user = User.GetUserFromID(user_id)
+    return render_template("show.html", user=user)
+
 @app.errorhandler(404)
 def ERR(e):
     return "Sorry! No response. Try again."

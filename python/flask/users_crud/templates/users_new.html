@@ -5,20 +5,19 @@
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="{{ url_for('static', filename='users_new.css') }}">
 		<link rel="stylesheet" href="{{ url_for('static', filename='common.css') }}">
 	</head>
 	<body>
-		<form action="/user_add" method="post">
-            <h1 class="form__title">Add New User</h1>
-			<label for="fname" class="form__label">First Name:</label>
-			<input type="text" name="fname" class="form__input">
-			<label for="lname" class="form__label">Last Name:</label>
-			<input type="text" name="lname" class="form__input">
-			<label for="email" class="form__label">Email:</label>
-			<input type="text" name="email" class="form__input">
+		<form class="user-card" action="/user_add" method="post">
+            <h1 class="user-card__title">Add New User</h1>
+			<label for="fname" class="user-card__label">First Name:</label>
+			<input type="text" name="fname" class="user-card__input">
+			<label for="lname" class="user-card__label">Last Name:</label>
+			<input type="text" name="lname" class="user-card__input">
+			<label for="email" class="user-card__label">Email:</label>
+			<input type="text" name="email" class="user-card__input">
 
-            <div class="form__footer">
+            <div class="user-card__footer">
 				<input type="submit" class="button button--inverted">
                 <a class="button button--inverted" href="/">Home</a>
             </div>

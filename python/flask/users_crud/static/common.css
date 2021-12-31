@@ -1,3 +1,70 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+
+	font-family: sans-serif;
+}
+
+.main__wrapper {
+	margin: auto;
+	max-width: 1000px;
+}
+
+header {
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+	padding: 10px 10px;
+}
+
+.user-card {
+	background-color: #009879;
+	border-radius: 5px;
+	max-width: 400px;
+	margin: 0 auto;
+	padding: 15px;
+}
+
+.user-card__title {
+	color: black;
+	margin: 20px 0;
+	text-align: center;
+}
+
+.user-card__input {
+	border: none;
+	border-radius: 5px;
+	display: block;
+	margin-top: 10px;
+	margin-bottom: 30px;
+	padding: 5px 7px;
+	width: 100%;
+}
+
+.user-card__label {
+	color: white;
+}
+
+.user-card__label--center {
+	text-align: center;
+}
+
+.user-card__info {
+	color: black;
+	font-weight: 800;
+	margin-top: 10px;
+	margin-bottom: 15px;
+	text-align: center;
+}
+
+.user-card__footer {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+	padding: 10px 5px;
+}
+
 .button {
 	background-color: #009879;
 	border: none;
@@ -16,5 +83,5 @@
 
 .button--inverted {
     background-color: #ffffff;
-    color: #009879;
+    color: black;
 }

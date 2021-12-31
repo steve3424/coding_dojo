@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="{{ url_for('static', filename='common.css') }}">
+	</head>
+	<body>
+		<div class="form">
+			<div class="user-card">
+				<header>
+					<h1 class="user-card__title">User {{user.id}}</h1>
+					<a class="button button--inverted" href="/">Home</a>
+				</header>
+
+				<p class="user-card__label user-card__label--center">Full Name:</p>
+				<p class="user-card__info">{{user.first_name}} {{user.last_name}}</p>
+				<p class="user-card__label user-card__label--center">Email</p>
+				<p class="user-card__info">{{user.email}}</p>
+				<p class="user-card__label user-card__label--center">Created At</p>
+				<p class="user-card__info">{{user.created_at}}</p>
+				<p class="user-card__label user-card__label--center">Updated At</p>
+				<p class="user-card__info">{{user.updated_at}}</p>
+
+				<div class="user-card__footer">
+					<a class="button button--inverted" href="/">Edit</a>
+					<input type="submit" class="button button--inverted" value="Delete">
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

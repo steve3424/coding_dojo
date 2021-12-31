@@ -9,6 +9,7 @@ class User:
         self.last_name  = data["last_name"]
         self.email      = data["email"]
         self.created_at = data["created_at"]
+        self.updated_at = data["updated_at"]
         
     @classmethod
     def GetAll(cls):
@@ -17,6 +18,15 @@ class User:
             print(u)
         users = [cls(row) for row in full_table]
         return users
+    
+    @classmethod
+    def GetUserFromID(cls, user_id):
+        query = "SELECT * FROM users WHERE id=%(user_id)s"
+        data = {
+            "user_id" : user_id
+        }
+        user = connectToMySQL("users_db").query_db(query, data)
+        return cls(user[0])
 
     @classmethod
     def Add(cls, data):
