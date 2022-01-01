@@ -39,6 +39,11 @@ def UserUpdate():
     User.Update(data)
     return redirect(f"/users/{request.form['id']}")
 
+@app.route("/users_delete/<int:user_id>")
+def UserDelete(user_id):
+    User.Delete(user_id)
+    return redirect("/users")
+
 @app.route("/users/<int:user_id>")
 def UserShow(user_id):
     user = User.GetUserFromID(user_id)

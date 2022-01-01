@@ -19,8 +19,6 @@ class User:
     @classmethod
     def GetAll(cls):
         full_table = connectToMySQL("users_db").query_db("SELECT * FROM users;")
-        for u in full_table:
-            print(u)
         users = [cls(row) for row in full_table]
         return users
     
@@ -43,3 +41,11 @@ class User:
     def Update(cls, data):
         query = "UPDATE users SET first_name=%(first_name)s, last_name=%(last_name)s, email=%(email)s, updated_at=NOW() WHERE id=%(id)s;"
         connectToMySQL("users_db").query_db(query,data)
+
+    @classmethod
+    def Delete(cls, user_id):
+        query = "DELETE FROM users WHERE id=%(id)s;"
+        data = {
+            "id" : user_id
+        }
+        connectToMySQL("users_db").query_db(query, data)
