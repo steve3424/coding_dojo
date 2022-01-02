@@ -26,7 +26,7 @@ def UserUpdate():
         "email"      : request.form["email"]
     }
     User.Update(data)
-    return redirect(f"/users")
+    return redirect(f"/users/{request.form['id']}")
 
 @app.route("/users/new")
 def UsersNew():
