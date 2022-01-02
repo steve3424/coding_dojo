@@ -1,4 +1,4 @@
-from mysqlconnection import connectToMySQL
+from flask_app.config.mysqlconnection import connectToMySQL
 
 class User:
     def __init__(self, data):
@@ -32,7 +32,7 @@ class User:
 
     @classmethod
     def Update(cls, data):
-        query = "UPDATE users SET first_name=%()s, last_name=%()s, email=%()s, updated_at=%()s WHERE id=%()s;"
+        query = "UPDATE users SET first_name=%(first_name)s, last_name=%(last_name)s, email=%(email)s, updated_at=NOW() WHERE id=%(id)s;"
         connectToMySQL("users_db").query_db(query,data)
 
     @classmethod
