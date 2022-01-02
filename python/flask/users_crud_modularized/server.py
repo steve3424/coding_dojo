@@ -32,24 +32,19 @@ def UserUpdate():
     }
     User.Update(data)
     return redirect(f"/users")
-    # return redirect(f"/users/{request.form['id']}")
-
-
 
 @app.route("/users/new")
 def UsersNew():
     return render_template("users_new.html")
 
-@app.route("/user_add", methods=["POST"])
+@app.route("/users_add", methods=["POST"])
 def UserAdd():
     data = {
         "first_name" : request.form["fname"],
         "last_name"  : request.form["lname"],
         "email"      : request.form["email"]
     }
-
     User.Add(data)
-
     return redirect("/users")
 
 @app.errorhandler(404)
