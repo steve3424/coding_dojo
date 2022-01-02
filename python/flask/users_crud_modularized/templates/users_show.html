@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="{{ url_for('static', filename='common.css') }}">
+	</head>
+	<body>
+		<form action="/users_update" method="post">
+			<div class="user-card">
+				<header>
+					<h1 class="user-card__title">User {{user.id}}</h1>
+					<a class="button button--inverted" href="/">Home</a>
+				</header>
+
+				<p class="user-card__label">First Name:</p>
+				<input type="hidden" name="id" value="{{user.id}}">
+				<input 
+					name="fname"
+					id="first_name" 
+					class="user-card__input user-card__input--hidden user-card__input--editable" 
+					disabled="true" 
+					value="{{user.first_name}}"
+				>
+				<p class="user-card__label">Last Name:</p>
+				<input 
+					name="lname"
+					id="last_name" 
+					class="user-card__input user-card__input--hidden user-card__input--editable" 
+					disabled="true" 
+					value="{{user.last_name}}"
+				>
+				<p class="user-card__label">Email</p>
+				<input 
+					name="email"
+					id="email" 
+					class="user-card__input user-card__input--hidden user-card__input--editable" 
+					disabled="true" 
+					value="{{user.email}}"
+				>
+				<p class="user-card__label">Created At</p>
+				<input class="user-card__input user-card__input--hidden" disabled="true" value="{{user.created_at}}">
+				<p class="user-card__label">Updated At</p>
+				<input class="user-card__input user-card__input--hidden" disabled="true" value="{{user.updated_at}}">
+
+				<div class="user-card__footer">
+					<a id="edit-btn" class="button button--inverted" onclick="BeginEdit()">Edit</a>
+					<a id="delete-btn" class="button button--inverted" href="/users_delete/{{user.id}}">Delete</a>
+				</div>
+			</div>
+		</form>
+
+	</body>
+
+	<script src="{{ url_for('static', filename='users_show.js') }}"></script>
+</html>
