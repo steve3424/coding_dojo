@@ -1,9 +1,14 @@
-from flask import Flask, render_template, redirect, session, request
+'''
+This is the main file which starts the server. It should reference the 
+controllers since it needs to see all the routing information.
+'''
 
-app = Flask(__name__)
+#from flask import render_template, redirect, session, request
+from flask_app import app
+from controllers import asoetnuh
 
 @app.route("/")
-def hello():
+def index():
     return render_template("index.html")
 
 @app.errorhandler(404)
