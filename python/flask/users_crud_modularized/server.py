@@ -1,6 +1,6 @@
 from flask import redirect
 from flask_app import app
-from flask_app.controllers import users
+from controllers import users
 
 @app.route("/")
 def index():
