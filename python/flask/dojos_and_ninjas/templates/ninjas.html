@@ -7,21 +7,21 @@
 		<link rel="stylesheet" href="{{ url_for('static', filename='ninjas.css') }}">
 	</head>
 	<body>
-		<form class="ninja-card" action="/ninja_add" method="post">
+		<form class="ninja-card" action="/ninjas/add" method="post">
             <h1 class="ninja-card__title">Add New Ninja</h1>
 			<p class="ninja-card__label">Dojo:</p>
 			<select name="dojo" class="ninja-card__input">
 				<!-- ADD DOJOS FROM DB  -->
 				<!-- TODO: Value should be dojo id from Jinja ?? -->
-				<option value="doj1">doj1</option>
-				<option value="doj2">doj2</option>
+				<option value="val1">doj1</option>
+				<option value="val2">doj2</option>
 			</select>
 			<p class="ninja-card__label">First Name:</p>
-			<input type="text" name="fname" class="ninja-card__input">
+			<input type="text" name="first_name" class="ninja-card__input">
 			<p class="ninja-card__label">Last Name:</p>
-			<input type="text" name="lname" class="ninja-card__input">
+			<input type="text" name="last_name" class="ninja-card__input">
 			<p class="ninja-card__label">Age:</p>
-			<input type="text" name="age" class="ninja-card__input">
+			<input type="number" name="age" class="ninja-card__input">
 
             <div class="ninja-card__footer">
 				<input class="button" type="submit" value="Add Ninja">
