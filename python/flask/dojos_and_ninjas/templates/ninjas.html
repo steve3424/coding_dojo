@@ -7,14 +7,13 @@
 		<link rel="stylesheet" href="{{ url_for('static', filename='ninjas.css') }}">
 	</head>
 	<body>
-		<form class="ninja-card" action="/ninjas/add" method="post">
+		<form class="ninja-card" action="/ninjas/add" method="post" name="ninja-form" onsubmit="return ValidateNinjaForm()">
             <h1 class="ninja-card__title">Add New Ninja</h1>
 			<p class="ninja-card__label">Dojo:</p>
-			<select name="dojo" class="ninja-card__input">
+			<select name="dojo_id" class="ninja-card__input">
 				<!-- ADD DOJOS FROM DB  -->
-				<!-- TODO: Value should be dojo id from Jinja ?? -->
-				<option value="val1">doj1</option>
-				<option value="val2">doj2</option>
+				<!-- <option value="{{dojo_id}}">{{dojo_name}}</option>
+				<option value="2">doj2</option> -->
 			</select>
 			<p class="ninja-card__label">First Name:</p>
 			<input type="text" name="first_name" class="ninja-card__input">
@@ -29,4 +28,6 @@
             </div>
 		</form>
 	</body>
+
+	<script src="{{ url_for('static', filename='ninjas.js') }}"></script>
 </html>
