@@ -1,0 +1,65 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	font-family: sans-serif;
+	padding: 0;
+}
+
+.ninja-card {
+	background-color: #333;
+	border-radius: 5px;
+	max-width: 400px;
+	margin: 30px auto;
+	padding: 15px;
+}
+
+.ninja-card__title {
+	color: royalblue;
+	margin: 20px 0;
+	text-align: center;
+}
+
+.ninja-card__label {
+	color: white;
+	margin-bottom: 15px;
+}
+
+.ninja-card__input {
+	border: 2px solid transparent;
+	border-radius: 5px;
+	color: black;
+	display: block;
+	font-size: 1em;
+	margin-top: 5px;
+	margin-bottom: 15px;
+	padding: 5px 7px;
+	width: 100%;
+}
+
+.ninja-card__input--hidden {
+	background-color: #009879;
+}
+
+.ninja-card__footer {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+	padding: 10px 5px;
+}
+
+.button {
+	background-color: royalblue;
+	border: none;
+	border-radius: 3px;
+	color: #333;
+	font-size: 1em;
+	font-weight: 700;
+	padding: 7px 10px;
+    text-decoration: none;
+}
+
+.button:hover {
+	background-color: #333;
+	color: whitesmoke;
+	cursor: pointer;
+}
