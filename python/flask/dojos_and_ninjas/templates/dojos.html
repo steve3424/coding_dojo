@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="{{ url_for('static', filename='card.css') }}">
+	</head>
+
+	<body>
+        <div class="horizontal-card-holder">
+            <form class="card" action="/dojos/add" method="post" name="dojo-form">
+                <h1 class="card__title">Add New Dojo</h1>
+                <p class="card__label">Dojo Name:</p>
+                <input type="text" name="first_name" class="card__input">
+                <div class="card__footer">
+                    <input class="button" type="submit" value="Add Dojo">
+                </div>
+            </form>
+    
+            <div class="card card--centered" action="/dojos/add" method="post" name="dojo-form">
+                <h1 class="card__title">Dojos</h1>
+                <a class="card__link" href="/">Dojo here</a>
+                <a class="card__link" href="/">Dojo here</a>
+                <a class="card__link" href="/">Dojo here</a>
+            </div>
+        </div>
+	</body>
+</html>

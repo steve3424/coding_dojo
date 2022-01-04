@@ -6,10 +6,11 @@ controllers since it needs to see all the routing information.
 from flask import redirect
 from flask_app import app
 from controllers import ninjas
+from controllers import dojos
 
 @app.route("/")
 def index():
-    return redirect("/ninjas")
+    return redirect("/dojos")
 
 @app.errorhandler(404)
 def ERR(e):
