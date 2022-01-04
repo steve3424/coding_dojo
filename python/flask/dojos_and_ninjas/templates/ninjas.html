@@ -4,25 +4,25 @@
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="{{ url_for('static', filename='ninjas.css') }}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='card.css') }}">
 	</head>
 	<body>
-		<form class="ninja-card" action="/ninjas/add" method="post" name="ninja-form" onsubmit="return ValidateNinjaForm()">
-            <h1 class="ninja-card__title">Add New Ninja</h1>
-			<p class="ninja-card__label">Dojo:</p>
-			<select name="dojo_id" class="ninja-card__input">
+		<form class="card" action="/ninjas/add" method="post" name="ninja-form" onsubmit="return ValidateNinjaForm()">
+            <h1 class="card__title">Add New Ninja</h1>
+			<p class="card__label">Dojo:</p>
+			<select name="dojo_id" class="card__input">
 				<!-- ADD DOJOS FROM DB  -->
 				<!-- <option value="{{dojo_id}}">{{dojo_name}}</option>
 				<option value="2">doj2</option> -->
 			</select>
-			<p class="ninja-card__label">First Name:</p>
-			<input type="text" name="first_name" class="ninja-card__input">
-			<p class="ninja-card__label">Last Name:</p>
-			<input type="text" name="last_name" class="ninja-card__input">
-			<p class="ninja-card__label">Age:</p>
-			<input type="number" name="age" class="ninja-card__input">
+			<p class="card__label">First Name:</p>
+			<input type="text" name="first_name" class="card__input">
+			<p class="card__label">Last Name:</p>
+			<input type="text" name="last_name" class="card__input">
+			<p class="card__label">Age:</p>
+			<input type="number" name="age" class="card__input">
 
-            <div class="ninja-card__footer">
+            <div class="card__footer">
 				<input class="button" type="submit" value="Add Ninja">
                 <a class="button" href="/">Home</a>
             </div>
