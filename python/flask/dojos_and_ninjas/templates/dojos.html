@@ -9,10 +9,10 @@
 
 	<body>
         <div class="horizontal-card-holder">
-            <form class="card" action="/dojos/add" method="post" name="dojo-form">
+            <form class="card" action="/dojos/add" method="post" name="dojo-form" onsubmit="return ValidateDojoForm()">
                 <h1 class="card__title">Add New Dojo</h1>
                 <p class="card__label">Dojo Name:</p>
-                <input type="text" name="first_name" class="card__input">
+                <input type="text" name="dojo_name" class="card__input">
                 <div class="card__footer">
                     <input class="button" type="submit" value="Add Dojo">
                 </div>
@@ -26,4 +26,6 @@
             </div>
         </div>
 	</body>
+
+	<script src="{{ url_for('static', filename='dojos.js') }}"></script>
 </html>
