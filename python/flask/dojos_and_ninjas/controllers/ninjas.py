@@ -10,8 +10,6 @@ def Ninjas():
 
 @app.route("/ninjas/add", methods=["POST"])
 def NinjasAdd():
-    # Need to get dojo id
-    # Get ninja info from form
     data = {
         "dojo_id"    : request.form["dojo_id"],
         "first_name" : request.form["first_name"],
