@@ -15,3 +15,12 @@ def DojosAdd():
     }
     Dojo.Add(data) 
     return redirect("/dojos")
+
+@app.route("/dojos/<int:dojo_id>")
+def DojosShow(dojo_id):
+    data = {
+        "dojo_id" : dojo_id
+    }
+    ninjas = Dojo.GetNinjas(data)
+    dojo_name = Dojo.GetName(data)
+    return render_template("dojo_ninjas.html", ninjas=ninjas, dojo_name=dojo_name)

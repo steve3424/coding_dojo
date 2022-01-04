@@ -1,8 +1,10 @@
 from config.mysqlconnection import connectToMySQL
 
 class Ninja:
-    def __init__(self):
-        pass
+    def __init__(self, db_row):
+        self.first_name = db_row["first_name"]
+        self.last_name = db_row["last_name"]
+        self.age = db_row["age"]
 
     @classmethod
     def Add(cls, data):

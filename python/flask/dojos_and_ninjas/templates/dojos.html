@@ -23,7 +23,7 @@
             <div class="card" action="/dojos/add" method="post" name="dojo-form">
                 <h1 class="card__title">Dojos</h1>
                 {% for dojo in dojos %}
-                <a class="card__link" href="/">{{dojo.name}}</a>
+                    <a class="card__link" href="/dojos/{{dojo.id}}">{{dojo.name}}</a>
                 {% endfor %}
             </div>
         </div>
