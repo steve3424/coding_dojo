@@ -11,9 +11,9 @@
             <h1 class="card__title">Add New Ninja</h1>
 			<p class="card__label">Dojo:</p>
 			<select name="dojo_id" class="card__input">
-				<!-- ADD DOJOS FROM DB  -->
-				<!-- <option value="{{dojo_id}}">{{dojo_name}}</option>
-				<option value="2">doj2</option> -->
+				{% for dojo in dojos %}
+					<option value="{{dojo.id}}">{{dojo.name}}</option>
+				{% endfor %}
 			</select>
 			<p class="card__label">First Name:</p>
 			<input type="text" name="first_name" class="card__input">
