@@ -23,10 +23,6 @@
 	padding: 15px;
 }
 
-.card--centered {
-	text-align: center;
-}
-
 .card__title {
 	color: royalblue;
 	margin: 20px 0;
@@ -60,7 +56,8 @@
 .card__link {
 	color: peru;
 	display: block;
-	margin: 10px 0;
+	margin: 10px auto;
+	width: fit-content;
 }
 
 .card__link:hover {
