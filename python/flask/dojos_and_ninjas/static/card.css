@@ -7,7 +7,7 @@
 }
 
 .horizontal-card-holder {
-	align-items: stretch;
+	align-items: baseline;
 	display: flex;
 	justify-content: space-between;
 	max-width: 850px;
