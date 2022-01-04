@@ -1,7 +1,17 @@
 from flask import render_template, request, redirect
 from flask_app import app
+from models.dojo import Dojo
 
 @app.route("/dojos")
 def Dojos():
     # Get all Dojos from db
-    return render_template("dojos.html")
+    dojos = Dojo.GetAll()
+    return render_template("dojos.html", dojos=dojos)
+
+@app.route("/dojos/add", methods=["POST"])
+def DojosAdd():
+    data = {
+        "name" : request.form["dojo_name"]
+    }
+    Dojo.Add(data) 
+    return redirect("/dojos")

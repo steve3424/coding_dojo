@@ -18,11 +18,11 @@
                 </div>
             </form>
     
-            <div class="card card--centered" action="/dojos/add" method="post" name="dojo-form">
+            <div class="card" action="/dojos/add" method="post" name="dojo-form">
                 <h1 class="card__title">Dojos</h1>
-                <a class="card__link" href="/">Dojo here</a>
-                <a class="card__link" href="/">Dojo here</a>
-                <a class="card__link" href="/">Dojo here</a>
+                {% for dojo in dojos %}
+                <a class="card__link" href="/">{{dojo.name}}</a>
+                {% endfor %}
             </div>
         </div>
 	</body>
