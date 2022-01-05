@@ -11,3 +11,7 @@ def Authors():
 def AuthorsAdd():
     author.Author.Add(request.form)
     return redirect("/authors")
+
+@app.route("/authors/<int:author_id>")
+def AuthorsShow():
+    pass

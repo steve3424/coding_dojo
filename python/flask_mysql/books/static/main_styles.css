@@ -5,13 +5,29 @@
 }
 
 /* LAYOUT STYLES*/
-.main__wrapper {
+.flex-row {
 	align-items: baseline;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-evenly;
-	margin: 10px auto;
+	margin: 0 auto;
 	max-width: 800px;
+	padding: 10px 0;
+}
+
+/* Gives margin on wrap */
+.flex-row > *:not(:last-child) {
+	margin-bottom: 15px;
+}
+
+.flex-col {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+}
+
+.flex-col > *:not(:last-child) {
+	margin-bottom: 15px;
 }
 
 header {
@@ -21,10 +37,6 @@ header {
 	padding: 10px 10px;
 }
 
-.centered {
-	margin: 0px auto;
-	width: fit-content;
-}
 /* END LAYOUT STYLES*/
 
 /* CARD STYLES */
@@ -34,8 +46,6 @@ header {
 	max-width: 60%;
 	min-width: 300px;
 	padding: 15px;
-
-	margin-bottom: 30px;
 }
 
 .card__title {
@@ -83,10 +93,6 @@ header {
 	text-decoration: underline;
 }
 /* END CARD STYLES */
-
-a {
-	display: inline-block;
-}
 
 /* BUTTON STYLES */
 .button {
