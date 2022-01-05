@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='main_styles.css')}}">
+</head>
+<body>
+    <div class="main__wrapper">
+        <form class="card" name="author-form" action="/authors/add" method="post" onsubmit="return ValidateAuthor()">
+            <h1 class="card__title">New Author</h1>
+            <p class="card__label">First Name:</p>
+            <input class="card__input" name="first_name" type="text">
+            <p class="card__label">Last Name:</p>
+            <input class="card__input" name="last_name" type="text">
+            <input class="button" type="submit" value="Add Author">
+        </form>
+
+        <div class="card">
+            <h1 class="card__title">All Authors</h1>
+            {% for author in authors %}
+                <a class="card__link" href="/authors/{{author.id}}">{{author.first_name}} {{author.last_name}}</a>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="centered">
+        <a class="button" href="">Add Book</a>
+    </div>
+</body>
+<script src="{{url_for('static', filename='authors.js')}}"></script>
+</html>
