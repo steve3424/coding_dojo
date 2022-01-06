@@ -18,14 +18,12 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="table__row">
-                        <td>book name</td>
-                        <td>34</td>
-                    </tr>
-                    <tr class="table__row">
-                        <td>book name</td>
-                        <td>34</td>
-                    </tr>
+                    {% for book in favorite_books %}
+                        <tr class="table__row">
+                            <td>{{book.title}}</td>
+                            <td>{{book.num_pages}}</td>
+                        </tr>
+                    {% endfor %}
                 </tbody>
             </table>
         </div>

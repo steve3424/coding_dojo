@@ -1,4 +1,5 @@
 from config.mysqlconnection import connectToMySQL
+from models import book
 
 class Author:
     def __init__(self, db_row) -> None:
@@ -23,7 +24,24 @@ class Author:
         data = {
             "author_id" : author_id
         }
-        print(author_id)
         query = "SELECT * FROM authors WHERE id=%(author_id)s;"
         result = connectToMySQL("books_db").query_db(query, data)
         return cls(result[0])
+
+    @classmethod
+    def GetFavorites(cls, data):
+        query = ("SELECT * FROM authors " 
+                 "LEFT JOIN favorites ON authors.id=favorites.author_id "
+                 "LEFT JOIN books ON favorites.book_id=books.id "
+                 "WHERE authors.id=%(author_id)s;")
+        favorite_books = connectToMySQL("books_db").query_db(query, data)
+        print(favorite_books)
+        fav_book_objs = []
+        for row in favorite_books:
+            book_data = {
+                "id" : row["books.id"],
+                "title" : row["title"],
+                "num_pages" : row["num_pages"]
+            }
+            fav_book_objs.append(book.Book(book_data))
+        return fav_book_objs
