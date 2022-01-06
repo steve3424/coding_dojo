@@ -8,6 +8,22 @@
 </head>
 <body>
     <div class="flex-row">
+        <div class="flex-col">
+            <form class="card" name="fav-form" action="/authors/add_fav">
+                <h1 class="card__title">Add Author's Favorite</h1>
+                <p class="card__label">Book:</p>
+                <select class="card__input" name="">
+                    {% for book in non_favorite_books %}
+                        <option value="{{book.id}}">{{book.title}}</option>
+                    {% endfor %}
+                </select>
+
+                <input class="button" type="submit" value="Add Favorite">
+            </form>
+
+            <a class="button" href="/">Home</a>
+        </div>
+
         <div class="card">
             <h1 class="card__title">{{author_obj.first_name}} {{author_obj.last_name}}'s Favorites</h1>
             <table class="table">
@@ -27,22 +43,6 @@
                 </tbody>
             </table>
         </div>
-        <div class="flex-col">
-            <form class="card" name="fav-form" action="/authors/add_fav">
-                <h1 class="card__title">Add Author's Favorite</h1>
-                <p class="card__label">Book:</p>
-                <select class="card__input" name="">
-                    {% for book in non_favorite_books %}
-                        <option value="{{book.id}}">{{book.title}}</option>
-                    {% endfor %}
-                </select>
-
-                <input class="button" type="submit" value="Add Favorite">
-            </form>
-
-            <a class="button" href="/">Home</a>
-        </div>
-
     </div>
 </body>
 </html>
