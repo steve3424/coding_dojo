@@ -114,16 +114,20 @@ header {
 }
 /* END BUTTON STYLES */
 
-table caption {
-	display: none;
-}
-
 /* TABLE STYLES */
-/* .table {
+.table {
 	border-collapse: collapse;
 	box-shadow: 0px 0px 20px rgba(0,0,0,0.15);
 	font-size: 0.9em;
 	font-family: sans-serif;
+	margin: 0 auto;
+}
+
+.table__title {
+	color: royalblue;
+	font-family: sans-serif;
+	margin: 20px 0;
+	text-align: center;
 }
 
 .table__head {
@@ -141,8 +145,12 @@ table caption {
     border-bottom: 1px solid #dddddd;
 }
 
-.table__row:nth-of-type(even) {
+.table__row:nth-of-type(odd) {
     background-color: #f3f3f3;
+}
+
+.table__row:nth-of-type(even) {
+    background-color: #e2e2e2;
 }
 
 .table__row:last-of-type {
@@ -151,5 +159,5 @@ table caption {
 
 .table__row:hover {
 	background-color: lightgray;
-} */
+}
 /* END TABLE STYLES */

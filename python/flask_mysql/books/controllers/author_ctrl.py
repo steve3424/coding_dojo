@@ -13,5 +13,5 @@ def AuthorsAdd():
     return redirect("/authors")
 
 @app.route("/authors/<int:author_id>")
-def AuthorsShow():
-    pass
+def AuthorsShow(author_id):
+    return render_template("authors_show.html")

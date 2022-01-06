@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='main_styles.css')}}">
+</head>
+<body>
+    <div class="flex-row">
+        <div class="card">
+            <h1 class="card__title">AUTHORS Favorites</h1>
+            <table class="table">
+                <thead>
+                    <tr class="table__head">
+                        <th>Title</th>
+                        <th># of Pages</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="table__row">
+                        <td>book name</td>
+                        <td>34</td>
+                    </tr>
+                    <tr class="table__row">
+                        <td>book name</td>
+                        <td>34</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="flex-col">
+            <form class="card" name="fav-form" action="/authors/add_fav">
+                <h1 class="card__title">Add Author's Favorite</h1>
+                <p class="card__label">Book:</p>
+                <select class="card__input" name="favorite_book" id="">
+                    <option value="o">Book title</option>
+                </select>
+                <input class="button" type="submit" value="Add Favorite">
+            </form>
+
+            <a class="button" href="/">Home</a>
+        </div>
+
+    </div>
+</body>
+</html>

@@ -2,6 +2,7 @@ from config.mysqlconnection import connectToMySQL
 
 class Author:
     def __init__(self, db_row) -> None:
+        self.id = db_row["id"]
         self.first_name = db_row["first_name"]
         self.last_name = db_row["last_name"]
 
