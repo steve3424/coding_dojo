@@ -6,7 +6,7 @@
 
 /* LAYOUT STYLES*/
 .flex-row {
-	align-items: baseline;
+	align-items: flex-start;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-evenly;
@@ -113,3 +113,43 @@ header {
 	cursor: pointer;
 }
 /* END BUTTON STYLES */
+
+table caption {
+	display: none;
+}
+
+/* TABLE STYLES */
+/* .table {
+	border-collapse: collapse;
+	box-shadow: 0px 0px 20px rgba(0,0,0,0.15);
+	font-size: 0.9em;
+	font-family: sans-serif;
+}
+
+.table__head {
+	background-color: royalblue;
+	color: #ffffff;
+	text-align: left;
+}
+
+.table th,
+.table td {
+	padding: 12px 15px;
+}
+
+.table__row {
+    border-bottom: 1px solid #dddddd;
+}
+
+.table__row:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.table__row:last-of-type {
+    border-bottom: 2px solid royalblue;
+}
+
+.table__row:hover {
+	background-color: lightgray;
+} */
+/* END TABLE STYLES */
