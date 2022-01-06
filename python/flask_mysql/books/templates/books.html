@@ -7,26 +7,25 @@
     <link rel="stylesheet" href="{{url_for('static', filename='main_styles.css')}}">
 </head>
 <body>
-    <div class="main__wrapper">
-        <form class="card" action="">
-            <h1 class="card__title">New Book</h1>
-            <p class="card__label">Name:</p>
-            <input class="card__input" type="text">
-            <p class="card__label">Number of pages:</p>
-            <input class="card__input" type="number">
-            <input class="button" type="submit" value="Add Book">
-        </form>
+    <div class="flex-row">
+        <div class="flex-col">
+            <form class="card" name="book-form" action="/books/add" method="post" onsubmit="return ValidateBook()">
+                <h1 class="card__title">New Book</h1>
+                <p class="card__label">Title:</p>
+                <input class="card__input" name="title" type="text">
+                <p class="card__label"># of Pages:</p>
+                <input class="card__input" name="num_pages" type="text">
+                <input class="button" type="submit" value="Add Book">
+            </form>
+
+            <a class="button" href="/">Home</a>
+        </div>
 
         <div class="card">
             <h1 class="card__title">All Books</h1>
-            <a class="card__link" href="">hey</a>
-            <a class="card__link" href="">hey</a>
-            <a class="card__link" href="">hey</a>
+            <a class="card__link" href="/">add books from db</a>
         </div>
     </div>
-
-    <div class="centered">
-        <a class="button" href="">Home</a>
-    </div>
 </body>
+<script src="{{url_for('static', filename='books.js')}}"></script>
 </html>
