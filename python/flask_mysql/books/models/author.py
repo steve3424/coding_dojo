@@ -17,3 +17,13 @@ class Author:
         query = ("INSERT INTO authors (first_name, last_name, created_at, updated_at)"
                  "VALUES (%(first_name)s, %(last_name)s, NOW(), NOW());")
         connectToMySQL("books_db").query_db(query, data)
+
+    @classmethod
+    def GetName(cls, author_id):
+        data = {
+            "author_id" : author_id
+        }
+        print(author_id)
+        query = "SELECT * FROM authors WHERE id=%(author_id)s;"
+        result = connectToMySQL("books_db").query_db(query, data)
+        return cls(result[0])

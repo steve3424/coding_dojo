@@ -1,7 +1,13 @@
-import re
 from flask import render_template, redirect, request
 from flask_app import app
+from models import book
 
 @app.route("/books")
 def Books():
-    return render_template("books.html")
+    books = book.Book.GetAllBooks()
+    return render_template("books.html", books=books)
+
+@app.route("/books/add", methods=["POST"])
+def BooksAdd():
+    book.Book.Add(request.form)
+    return redirect("/books")

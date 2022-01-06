@@ -1,6 +1,5 @@
 from flask import render_template, redirect, request
 from flask_app import app
-from controllers import book_ctrl
 from models import author
 
 @app.route("/authors")
@@ -15,4 +14,5 @@ def AuthorsAdd():
 
 @app.route("/authors/<int:author_id>")
 def AuthorsShow(author_id):
-    return render_template("authors_show.html")
+    author_obj = author.Author.GetName(author_id)
+    return render_template("authors_show.html", author_obj=author_obj)

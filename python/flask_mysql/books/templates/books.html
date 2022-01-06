@@ -23,7 +23,9 @@
 
         <div class="card">
             <h1 class="card__title">All Books</h1>
-            <a class="card__link" href="/">add books from db</a>
+            {% for book in books %}
+                <a class="card__link" href="/books/{{book.id}}">{{book.title}}</a>
+            {% endfor %}
         </div>
     </div>
 </body>

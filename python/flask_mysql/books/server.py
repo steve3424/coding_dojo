@@ -1,11 +1,12 @@
 '''
 This is the main file which starts the server. It should reference the 
-controllers since it needs to see all the routing information.
+controllers since it needs to set up all routing information.
 '''
 
-from flask import render_template, redirect, session, request
+from flask import redirect
 from flask_app import app
 from controllers import author_ctrl
+from controllers import book_ctrl
 
 @app.route("/")
 def index():
