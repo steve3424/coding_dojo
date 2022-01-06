@@ -18,7 +18,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {% for book in favorite_books %}
+                    {% for book in author_obj.favorite_books %}
                         <tr class="table__row">
                             <td>{{book.title}}</td>
                             <td>{{book.num_pages}}</td>

@@ -6,6 +6,7 @@ class Author:
         self.id = db_row["id"]
         self.first_name = db_row["first_name"]
         self.last_name = db_row["last_name"]
+        self.favorite_books = []
 
     @classmethod
     def GetAllAuthors(cls):
@@ -21,26 +22,30 @@ class Author:
 
     @classmethod
     def GetAuthor(cls, data):
-        query = "SELECT * FROM authors WHERE id=%(author_id)s;"
-        result = connectToMySQL("books_db").query_db(query, data)
-        return cls(result[0])
-
-    @classmethod
-    def GetFavorites(cls, data):
         query = ("SELECT * FROM authors " 
-                 "JOIN favorites ON authors.id=favorites.author_id "
-                 "JOIN books ON favorites.book_id=books.id "
+                 "LEFT JOIN favorites ON authors.id=favorites.author_id "
+                 "LEFT JOIN books ON favorites.book_id=books.id "
                  "WHERE authors.id=%(author_id)s;")
-        favorite_books = connectToMySQL("books_db").query_db(query, data)
-        fav_book_objs = []
-        for row in favorite_books:
-            book_data = {
-                "id" : row["books.id"],
-                "title" : row["title"],
-                "num_pages" : row["num_pages"]
-            }
-            fav_book_objs.append(book.Book(book_data))
-        return fav_book_objs
+        favorited_books = connectToMySQL("books_db").query_db(query, data)
+
+        # Use first result to create author
+        author_data = {
+            "id" : favorited_books[0]["id"],
+            "first_name" : favorited_books[0]["first_name"],
+            "last_name" : favorited_books[0]["last_name"]
+        }
+        author = cls(author_data)
+
+        # Add all favorited books
+        for row in favorited_books:
+            if row["books.id"] != None:
+                book_data = {
+                    "id" : row["books.id"],
+                    "title" : row["title"],
+                    "num_pages" : row["num_pages"]
+                }
+                author.favorite_books.append(book.Book(book_data))
+        return author
 
     @classmethod
     def GetNonFavorites(cls, data):
