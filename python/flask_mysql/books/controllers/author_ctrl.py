@@ -18,7 +18,6 @@ def AuthorsShow(author_id):
         "author_id" : author_id
     }
 
-    # TODO: Can pass in name instead of a separate db call here
     author_obj = author.Author.GetAuthor(data)
     non_favorite_books = author.Author.GetNonFavorites(data)
     return render_template("authors_show.html", author_obj=author_obj, non_favorite_books=non_favorite_books)
