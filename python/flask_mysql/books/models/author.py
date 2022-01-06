@@ -51,9 +51,7 @@ class Author:
     def GetNonFavorites(cls, data):
         query = ("SELECT * FROM books " 
                  "LEFT JOIN favorites ON books.id=favorites.book_id "
-                 "WHERE favorites.author_id IS NULL " 
-                 "OR " 
-                 "favorites.author_id != %(author_id)s;")
+                 "WHERE NOT favorites.author_id <=> %(author_id)s;")
         non_fav_books = connectToMySQL("books_db").query_db(query, data)
         non_fav_book_objs = []
         for row in non_fav_books:
