@@ -31,9 +31,12 @@
             <form class="card" name="fav-form" action="/authors/add_fav">
                 <h1 class="card__title">Add Author's Favorite</h1>
                 <p class="card__label">Book:</p>
-                <select class="card__input" name="favorite_book" id="">
-                    <option value="o">Book title</option>
+                <select class="card__input" name="">
+                    {% for book in non_favorite_books %}
+                        <option value="{{book.id}}">{{book.title}}</option>
+                    {% endfor %}
                 </select>
+
                 <input class="button" type="submit" value="Add Favorite">
             </form>
 
