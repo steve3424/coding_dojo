@@ -51,7 +51,8 @@ class Author:
     def GetNonFavorites(cls, data):
         query = ("SELECT * FROM books " 
                  "LEFT JOIN favorites ON books.id=favorites.book_id "
-                 "WHERE NOT favorites.author_id <=> %(author_id)s;")
+                 "WHERE NOT favorites.author_id <=> %(author_id)s "
+                 "GROUP BY books.id;")
         non_fav_books = connectToMySQL("books_db").query_db(query, data)
         non_fav_book_objs = []
         for row in non_fav_books:
@@ -62,3 +63,9 @@ class Author:
             }
             non_fav_book_objs.append(book.Book(book_data))
         return non_fav_book_objs
+
+    @classmethod
+    def AddFavorite(cls, data):
+        query = ("INSERT INTO favorites (book_id, author_id) "
+                 "VALUES (%(book_id)s, %(author_id)s);")
+        connectToMySQL("books_db").query_db(query, data)

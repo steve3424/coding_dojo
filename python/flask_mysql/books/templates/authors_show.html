@@ -9,10 +9,10 @@
 <body>
     <div class="flex-row">
         <div class="flex-col">
-            <form class="card" name="fav-form" action="/authors/add_fav">
+            <form class="card" name="fav-form" action="/authors/{{author_obj.id}}/add_favorite" method="post" onsubmit="return ValidateFavorite()">
                 <h1 class="card__title">Add Author's Favorite</h1>
                 <p class="card__label">Book:</p>
-                <select class="card__input" name="">
+                <select class="card__input" name="book_id">
                     {% for book in non_favorite_books %}
                         <option value="{{book.id}}">{{book.title}}</option>
                     {% endfor %}
@@ -45,4 +45,5 @@
         </div>
     </div>
 </body>
+<script src="{{url_for('static', filename='authors_show.js')}}"></script>
 </html>

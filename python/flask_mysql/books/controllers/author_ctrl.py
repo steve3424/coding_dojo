@@ -21,3 +21,13 @@ def AuthorsShow(author_id):
     author_obj = author.Author.GetAuthor(data)
     non_favorite_books = author.Author.GetNonFavorites(data)
     return render_template("authors_show.html", author_obj=author_obj, non_favorite_books=non_favorite_books)
+
+@app.route("/authors/<int:author_id>/add_favorite", methods=["POST"])
+def AuthorsAddFavorite(author_id):
+    data = {
+        "book_id" : request.form["book_id"],
+        "author_id" : author_id
+    }
+    
+    author.Author.AddFavorite(data)
+    return redirect(f"/authors/{author_id}")
