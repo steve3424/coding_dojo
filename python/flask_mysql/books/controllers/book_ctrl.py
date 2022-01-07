@@ -11,3 +11,7 @@ def Books():
 def BooksAdd():
     book.Book.Add(request.form)
     return redirect("/books")
+
+@app.route("/books/<int:book_id>")
+def BooksShow(book_id):
+    return render_template("books_show.html")
