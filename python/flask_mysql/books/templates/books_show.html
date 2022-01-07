@@ -10,12 +10,12 @@
     <div class="flex-row">
         <div class="flex-col">
             <form class="card" name="" action="" method="post" onsubmit="">
-                <h1 class="card__title">Add BOOK's Favorite</h1>
+                <h1 class="card__title">Add {{book.title}}'s Favorite</h1>
                 <p class="card__label">Author:</p>
                 <select class="card__input" name="">
-                    <!-- {% for book in non_favorite_books %} -->
-                        <option value="">opt</option>
-                    <!-- {% endfor %} -->
+                    {% for author in not_favorited_by %}
+                        <option value="">{{author.first_name}} {{author.last_name}}</option>
+                    {% endfor %}
                 </select>
 
                 <input class="button" type="submit" value="Add Favorite">
@@ -26,9 +26,9 @@
 
         <div class="card">
             <h1 class="card__title">Favorited By</h1>
-            <!-- {% for author in authors %} -->
-                <a class="card__link" href="">Author</a>
-            <!-- {% endfor %} -->
+            {% for author in book.favorited_by %}
+                <a class="card__link" href="/authors/{{author.id}}">{{author.first_name}} {{author.last_name}}</a>
+            {% endfor %}
         </div>
     </div>
 </body>

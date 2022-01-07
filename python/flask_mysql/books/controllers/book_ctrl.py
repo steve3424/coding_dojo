@@ -14,4 +14,9 @@ def BooksAdd():
 
 @app.route("/books/<int:book_id>")
 def BooksShow(book_id):
-    return render_template("books_show.html")
+    data = {
+        "book_id" : book_id 
+    }
+    book_obj = book.Book.GetBook(data)
+    not_favorited_by = book.Book.GetNotFavoritedBy(data)
+    return render_template("books_show.html", book=book_obj, not_favorited_by=not_favorited_by)
