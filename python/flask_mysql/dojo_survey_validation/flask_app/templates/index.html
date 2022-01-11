@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+	</head>
+	<body>
+		<form action="/process" method="post">
+			{% with messages = get_flashed_messages() %}
+				{% if messages %}
+					{% for message in messages %}
+						<p>{{message}}</p>
+					{% endfor %}
+				{% endif %}
+			{% endwith %}
+			<h1 class="form__title">
+				Dojo Survey
+			</h1>
+			<div>
+				<label for="name" class="form__label">Name:</label>
+				<input type="text" name="name" class="form__input" value="{{session['name']}}">
+			</div>
+			<div>
+				<label for="location" class="form__label">Dojo Location:</label>
+				<select name="location" class= "form__input">
+					<option value="San Jose">San Jose</option>
+					<option value="Texas">Texas</option>
+					<option value="Place">Place</option>
+				</select>
+			</div>
+			<div>
+				<label for="language" class="form__label">Favorite language:</label>
+				<select name="language" class= "form__input">
+					<option value="C">C</option>
+					<option value="Python">Python</option>
+				</select>
+			</div>
+			<div>
+				<label for="comments" class="form__label">Comments:</label>
+				<textarea name="comments" class="form__input form__input--large" cols="30" rows="10">{{session["comments"]}}</textarea>
+			</div>
+
+			<input type="submit" class="form__submit">
+		</form>
+	</body>
+</html>

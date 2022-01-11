@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.result {
+	background-color: #3e3e3f;
+	border-radius: 5px;
+	max-width: 400px;
+	margin: 0 auto;
+	padding: 15px;
+}
+
+.result__text {
+    color: white;
+    font-size: 1em;
+    margin: 10px 0;
+}
+
+a {
+	background-color: gold;
+	border: none;
+	border-radius: 3px;
+	color: black;
+    display: inline-block;
+	font-weight: 700;
+	padding: 7px 10px;
+	margin: 10px 0 20px 0;
+    text-decoration: none;
+}
+
+a:hover {
+	cursor: pointer;
+	transform: translate(1px, 1px);
+}
