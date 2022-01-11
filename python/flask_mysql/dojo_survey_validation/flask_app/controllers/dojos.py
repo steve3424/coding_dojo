@@ -4,6 +4,8 @@ from flask_app.models.dojo import Dojo
 
 @app.route("/")
 def Index():
+    if "_flashes" not in session:
+        session.clear()
     return render_template("index.html")
 
 @app.route("/process", methods=["POST"])
@@ -22,5 +24,4 @@ def Process():
 @app.route("/result")
 def Result():
     dojo = Dojo(session)
-    session.clear()
     return render_template("result.html", dojo=dojo)
