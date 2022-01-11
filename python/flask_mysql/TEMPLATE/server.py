@@ -1,11 +1,14 @@
 '''
-This is the main file which starts the server. It should reference the 
-controllers since it needs to see all the routing information.
+This is the main file which starts the server. 
+
+It should reference the controllers since it needs to set up all the routing information.
+
+It should reference the app object to run.
 '''
 
-#from flask import render_template, redirect, session, request
 from flask_app import app
-from controllers import asoetnuh
+# TODO: Import controllers so the app.route() can be set up
+# TODO: Import anything from flask that may be needed 
 
 @app.route("/")
 def index():
