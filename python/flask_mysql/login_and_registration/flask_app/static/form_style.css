@@ -30,3 +30,7 @@
 	text-align: center;
 	width: 100%;
 }
+
+.form-card__errors {
+	margin: 15px 0;
+}
