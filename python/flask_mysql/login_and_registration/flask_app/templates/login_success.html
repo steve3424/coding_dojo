@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='login_success.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='button.css')}}">
 </head>
 <body>
-    <h1>SUCCESS</h1>    
+    <h1>Welcome {{name}}</h1>    
+    <a class="button" href="/">Logout</a>
 </body>
 </html>

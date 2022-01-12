@@ -7,13 +7,20 @@ It should reference the app object to run.
 '''
 
 from flask_app import app
-# TODO: Import controllers so the app.route() can be set up
-# TODO: Import anything from flask that may be needed 
 from flask import render_template, session
 from flask_app.controllers import users
 
 @app.route("/")
 def index():
+    '''
+    Redirecting here will clear session UNLESS it gets here
+    through a flash validation path. Because flashes only live 
+    through 1 redirect, the next redirect will clear the session
+    also. This seems like a hacky way to save some form data
+    through flash errors, but it works. Users will be logged out
+    as soon as they redirect here. There are other, more intelligent
+    ways to do this, but it's fine for this assignment.
+    '''
     if "_flashes" not in session:
         session.clear()
     return render_template("index.html")

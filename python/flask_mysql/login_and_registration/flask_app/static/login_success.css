@@ -1,0 +1,12 @@
+body {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+	color: darkblue;
+	font-family: sans-serif;
+    font-size: 3em;
+	margin: 20px 0;
+}

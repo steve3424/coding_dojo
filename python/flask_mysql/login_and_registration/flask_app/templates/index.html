@@ -22,15 +22,15 @@
 				{% endif %}
 			{% endwith %}
 			<label class="form-card__label">First Name</label>
-			<input class="form-card__input" type="text" name="first_name" value="{{session['reg_first_name']}}">
+			<input class="form-card__input" type="text" name="first_name" value="{{session['hey']}}">
 			<label class="form-card__label">Last Name</label>
 			<input class="form-card__input" type="text" name="last_name" value="{{session['reg_last_name']}}">
 			<label class="form-card__label">Email</label>
 			<input class="form-card__input" type="text" name="email" value="{{session['reg_email']}}">
 			<label class="form-card__label">Password</label>
-			<input class="form-card__input" type="password" name="password" value="{{session['reg_password']}}">
+			<input class="form-card__input" type="password" name="password">
 			<label class="form-card__label">Confirm Password</label>
-			<input class="form-card__input" type="password" name="confirm_password" value="{{session['reg_confirm_password']}}">
+			<input class="form-card__input" type="password" name="confirm_password">
 
 			<input class="button" type="submit" value="Register">
 		</form>

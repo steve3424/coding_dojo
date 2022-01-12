@@ -9,8 +9,6 @@ def RegisterUser():
     session["reg_first_name"]       = request.form["first_name"]
     session["reg_last_name"]        = request.form["last_name"]
     session["reg_email"]            = request.form["email"]
-    session["reg_password"]         = request.form["password"]
-    session["reg_confirm_password"] = request.form["confirm_password"]
 
     if not User.ValidateRegistrationForm(request.form):
         return redirect("/")
@@ -45,6 +43,6 @@ def LoginUser():
 @app.route("/login_success")
 def LoginSuccess():
     if "user_id" in session:
-        return render_template("login_success.html")
+        return render_template("login_success.html", name=session["first_name"])
     else:
         return redirect("/")
