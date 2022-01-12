@@ -1,0 +1,23 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.main-display {
+    align-items: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 0 auto;
+    max-width: 900px;
+    padding: 30px 0;
+}
+
+.main-display > *:not(:last-child) {
+    margin-bottom: 30px;
+}
+
+.main-display__element {
+    min-width: 330px;
+}

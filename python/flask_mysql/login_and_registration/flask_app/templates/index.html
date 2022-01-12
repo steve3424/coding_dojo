@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{{url_for('static', filename='index.css')}}">
+	<link rel="stylesheet" href="{{url_for('static', filename='form_style.css')}}">
+	<link rel="stylesheet" href="{{url_for('static', filename='button.css')}}">
+</head>
+<body>
+	<div class="main-display">
+		<form class="form-card main-display__element">
+			<h1 class="form-card__title">Register</h1>
+			<label class="form-card__label">First Name</label>
+			<input class="form-card__input" type="text">
+			<label class="form-card__label">Last Name</label>
+			<input class="form-card__input" type="text">
+			<label class="form-card__label">Email</label>
+			<input class="form-card__input" type="text">
+			<label class="form-card__label">Password</label>
+			<input class="form-card__input" type="password">
+			<label class="form-card__label">Confirm Password</label>
+			<input class="form-card__input" type="password">
+
+			<input class="button" type="submit" value="Register">
+		</form>
+
+		<form class="form-card main-display__element">
+			<h1 class="form-card__title">Login</h1>
+			<label class="form-card__label">Email</label>
+			<input class="form-card__input" type="text">
+			<label class="form-card__label">Password</label>
+			<input class="form-card__input" type="password">
+
+			<input class="button" type="submit" value="Login">
+		</form>
+	</div>
+</body>
+</html>
