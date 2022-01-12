@@ -15,7 +15,6 @@ from flask_app.controllers import users
 @app.route("/")
 def index():
     if "_flashes" not in session:
-        # TODO: not sure how this will work with user sessions
         session.clear()
     return render_template("index.html")
 

@@ -12,7 +12,7 @@
 	<div class="main-display">
 		<form class="form-card main-display__element" action="/register_user" method="post">
 			<h1 class="form-card__title">Register</h1>
-			{% with messages = get_flashed_messages() %}
+			{% with messages = get_flashed_messages(category_filter=['register_flashes']) %}
 				{% if messages %}
 				<div class="errors form-card__errors">
 					{% for message in messages %}
@@ -35,12 +35,21 @@
 			<input class="button" type="submit" value="Register">
 		</form>
 
-		<form class="form-card main-display__element">
+		<form class="form-card main-display__element" action="/login_user" method="post">
 			<h1 class="form-card__title">Login</h1>
+			{% with messages = get_flashed_messages(category_filter=['login_flashes']) %}
+				{% if messages %}
+				<div class="errors form-card__errors">
+					{% for message in messages %}
+						<p class="errors__message">{{message}}</p>
+					{% endfor %}
+				</div>
+				{% endif %}
+			{% endwith %}
 			<label class="form-card__label">Email</label>
-			<input class="form-card__input" type="text">
+			<input class="form-card__input" type="text" name="email" value="{{session['login_email']}}">
 			<label class="form-card__label">Password</label>
-			<input class="form-card__input" type="password">
+			<input class="form-card__input" type="password" name="password">
 
 			<input class="button" type="submit" value="Login">
 		</form>
