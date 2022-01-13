@@ -32,7 +32,8 @@ DROP TABLE IF EXISTS `authors`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `authors` (
   `id` int unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(64) NOT NULL,
+  `first_name` varchar(64) NOT NULL,
+  `last_name` varchar(64) NOT NULL,
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
   PRIMARY KEY (`id`)
