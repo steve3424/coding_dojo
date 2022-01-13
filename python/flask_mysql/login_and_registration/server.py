@@ -20,6 +20,10 @@ def index():
     through flash errors, but it works. Users will be logged out
     as soon as they redirect here. There are other, more intelligent
     ways to do this, but it's fine for this assignment.
+
+    TODO: This should probably be dealt w/ client side. Javascript should
+    handle the first level of checks that DONT clear the form, while flashes
+    SHOULD clear the form w/ error list.
     '''
     if "_flashes" not in session:
         session.clear()
